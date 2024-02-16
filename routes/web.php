@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KegiatanController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +22,5 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+
+Route::get('/kegiatan', [KegiatanController::class, 'index']);

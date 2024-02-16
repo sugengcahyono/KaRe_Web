@@ -77,7 +77,7 @@
             </ul>
             <li><a href="pricing.html">Galeri</a></li>
           </li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Lokasi</a></li>
           <li><a class="get-a-quote" href="get-a-quote.html">Login</a></li>
         </ul>
       </nav><!-- .navbar -->
