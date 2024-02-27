@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Models;
+// namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+// use Illuminate\Database\Eloquent\Factories\HasFactory;
+// use Illuminate\Database\Eloquent\Model;
 
-class Kegiatan extends Model
-{
-    use HasFactory;
+// class Kegiatan extends Model
+// {
+//     use HasFactory;
 
-    protected $table = 'kegiatan';
-    protected $primaryKey = 'id_kegiatan';
-    protected $keyType = 'int';
-    public $timestamps = true;
-}
+//     protected $table = 'kegiatan';
+//     protected $primaryKey = 'id_kegiatan';
+//     protected $keyType = 'int';
+//     public $timestamps = true;
+// }

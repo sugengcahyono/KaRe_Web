@@ -2,6 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KegiatanController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LokasiController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\LayananKunjunganController;
+use App\Http\Controllers\LayananTabunganController;
+use App\Http\Controllers\LayananSampahController;
+use App\Http\Controllers\HomeController;
+
+
+
+
+
 
 
 
@@ -19,8 +32,17 @@ use App\Http\Controllers\KegiatanController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/home', function () {
-    return view('home');
-});
+
 
 Route::get('/kegiatan', [KegiatanController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+
+Route::get('/lokasi', [LokasiController::class, 'index'])->name('lokasi');
+Route::get('/profile', [ProfileController::class, 'index']);
+Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri');
+Route::get('/layanankunjungan', [LayananKunjunganController::class, 'index'])->name('layanankunjungan');
+Route::get('/layanantabungan', [LayananTabunganController::class, 'index'])->name('layanantabungan');
+Route::get('/layanansampah', [LayananSampahController::class, 'index'])->name('layanansampah');
+Route::get('/home', [HomeController::class, 'index']) ->name('home');
+
+

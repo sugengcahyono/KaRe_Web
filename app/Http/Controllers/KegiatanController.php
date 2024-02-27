@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Kegiatan;
+use views\frontend\kegiatan;
 
 class KegiatanController extends Controller
 {
@@ -11,8 +11,8 @@ class KegiatanController extends Controller
     {      
         // dd('test halaman kegiatan');
 
-         $kegiatan = Kegiatan::all();
-         return view ('kegiatan', ['kegiatanList' => $kegiatan]);
+        //  $kegiatan = Kegiatan::all();
+         return view ('frontend.kegiatan');
 
         //  dd($kegiatan);
 
