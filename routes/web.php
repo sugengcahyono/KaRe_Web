@@ -10,6 +10,10 @@ use App\Http\Controllers\LayananKunjunganController;
 use App\Http\Controllers\LayananTabunganController;
 use App\Http\Controllers\LayananSampahController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\FormulirKunjunganController;
+use App\Http\Controllers\BerandaLoginController;
+use App\Http\Controllers\DetailPengajuanController;
+
 
 
 
@@ -44,5 +48,8 @@ Route::get('/layanankunjungan', [LayananKunjunganController::class, 'index'])->n
 Route::get('/layanantabungan', [LayananTabunganController::class, 'index'])->name('layanantabungan');
 Route::get('/layanansampah', [LayananSampahController::class, 'index'])->name('layanansampah');
 Route::get('/home', [HomeController::class, 'index']) ->name('home');
+Route::get('/formulirkunjungan', [FormulirKunjunganController::class, 'index']) ->name('formulirkunjungan');
+Route::get('/berandalogin', [BerandaLoginController::class, 'index']) ->name('berandalogin');
+Route::get('/detailpengajuan', [DetailPengajuanController::class, 'index']) ->name('detailpengajuan');
 
 

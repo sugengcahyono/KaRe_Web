@@ -187,7 +187,7 @@
         </div>
         <div class="col-md-7">
           <h3>Pengumpulan Sampah</h3>
-          <p class="fst-italic">
+          <p class="fst-serif">
             Pengumpulan sampah adalah proses pengambilan limbah dari rumah tangga, area komersial, dan industri oleh layanan pengelola sampah. Sampah diangkut menggunakan kendaraan khusus ke tempat pemrosesan seperti Tempat Pemrosesan Sampah Terpadu (TPST) atau fasilitas daur ulang. Penduduk mungkin diminta untuk memilah sampah. Di tempat pemrosesan, sampah diolah untuk mengurangi volume, menghasilkan energi, atau didaur ulang. Pematuhan terhadap prosedur pengumpulan yang ditetapkan oleh otoritas setempat penting untuk manajemen limbah yang efektif dan berkelanjutan.
           </p>
 
@@ -200,7 +200,7 @@
         </div>
         <div class="col-md-7 order-2 order-md-1">
           <h3>Daur Ulang</h3>
-          <p class="fst-italic">
+          <p class="fst-serif">
             Daur ulang sampah adalah proses konversi limbah menjadi produk baru untuk mengurangi limbah yang masuk ke tempat pembuangan sampah. Ini melibatkan pengumpulan, pemilahan, dan pembersihan limbah, diikuti oleh pemrosesan untuk menghasilkan bahan baku. Bahan tersebut kemudian digunakan untuk membuat produk daur ulang seperti kertas, plastik, atau logam. Daur ulang membantu mengurangi penggunaan sumber daya alam, energi, dan volume limbah, serta berkontribusi pada keberlanjutan lingkungan. Kesadaran masyarakat terhadap daur ulang adalah kunci dalam menciptakan lingkungan yang lebih berkelanjutan.
           </p>
         </div>

@@ -34,7 +34,7 @@
                 <div class="col-md-7">
                     <!-- <h3>Pengumpulan Sampah</h3> -->
                     <p class="fst-serif">
-                    Jika masyarakat melakukan pemilahan sampah dengan baik dan benar, mereka memiliki kesempatan untuk menjual sampah yang telah dipilah kepada Tempat Pembuangan Sampah Terpadu (TPST) Kartoharjo. TPST dapat membeli sampah yang telah dipisahkan sesuai jenisnya, dan masyarakat akan menerima uang sebagai imbalan. 
+                        Jika masyarakat melakukan pemilahan sampah dengan baik dan benar, mereka memiliki kesempatan untuk menjual sampah yang telah dipilah kepada Tempat Pembuangan Sampah Terpadu (TPST) Kartoharjo. TPST dapat membeli sampah yang telah dipisahkan sesuai jenisnya, dan masyarakat akan menerima uang sebagai imbalan.
                     </p>
 
                 </div>
@@ -47,7 +47,7 @@
                 <div class="col-md-7 order-2 order-md-1">
                     <!-- <h3>Daur Ulang</h3> -->
                     <p class="fst-serif">
-                    Alternatifnya, masyarakat juga dapat memilih untuk menabung uang yang mereka terima dari penjualan sampah tersebut. Tindakan ini tidak hanya mendukung keberlanjutan pengelolaan sampah, tetapi juga memberikan insentif ekonomi kepada masyarakat untuk berpartisipasi aktif dalam praktik pemilahan sampah.
+                        Alternatifnya, masyarakat juga dapat memilih untuk menabung uang yang mereka terima dari penjualan sampah tersebut. Tindakan ini tidak hanya mendukung keberlanjutan pengelolaan sampah, tetapi juga memberikan insentif ekonomi kepada masyarakat untuk berpartisipasi aktif dalam praktik pemilahan sampah.
                     </p>
 
                 </div>

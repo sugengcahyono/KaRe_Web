@@ -45,7 +45,7 @@
                             <img src="assets/img/sampah2.jpeg" alt="" class="img-fluid">
                         </div>
                         <h3><a href="service-details.html" class="stretched-link">Pembelian Pupuk</a></h3>
-                        <p>TPST memberikan layanan kepada masyarakat untuk membeli pupuk hasil dari pengolahan sampah.  </p>
+                        <p>TPST memberikan layanan kepada masyarakat untuk membeli pupuk hasil dari pengolahan sampah. </p>
                     </div>
                 </div><!-- End Card Item -->
             </div><!-- End Row -->
