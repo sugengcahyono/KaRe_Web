@@ -1,6 +1,6 @@
 /**
 * Template Name: NiceAdmin
-* Updated: Jan 29 2024 with Bootstrap v5.3.2
+* Updated: Sep 18 2023 with Bootstrap v5.3.2
 * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
@@ -64,7 +64,7 @@ h6 {
   font-size: 24px;
   margin-bottom: 0;
   font-weight: 600;
-  color: #012970;
+  color: #21690F;
 }
 
 /*--------------------------------------------------------------
@@ -236,7 +236,7 @@ h6 {
   padding: 20px 0 15px 0;
   font-size: 18px;
   font-weight: 500;
-  color: #012970;
+  color: #21690F;
   font-family: "Poppins", sans-serif;
 }
 
@@ -325,7 +325,7 @@ h6 {
 }
 
 .breadcrumb .active {
-  color: #51678f;
+  color: #88b37d;
   font-weight: 600;
 }
 
@@ -365,14 +365,14 @@ h6 {
 }
 
 .logo img {
-  max-height: 26px;
+  max-height: 40px;
   margin-right: 6px;
 }
 
 .logo span {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 700;
-  color: #012970;
+  color: #21690F;
   font-family: "Nunito", sans-serif;
 }
 
@@ -389,9 +389,10 @@ h6 {
 
 .header .toggle-sidebar-btn {
   font-size: 32px;
-  padding-left: 10px;
+  /* padding-left: 0px; */
+  padding-right: 0px;
   cursor: pointer;
-  color: #012970;
+  color: #21690F;
 }
 
 .header .search-bar {
@@ -474,7 +475,7 @@ h6 {
 }
 
 .header-nav .nav-profile {
-  color: #012970;
+  color: #21690F;
 }
 
 .header-nav .nav-profile img {
@@ -602,7 +603,7 @@ h6 {
   top: 60px;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: 250px;
   z-index: 996;
   transition: all 0.3s;
   padding: 20px;
@@ -610,7 +611,7 @@ h6 {
   scrollbar-width: thin;
   scrollbar-color: #aab7cf transparent;
   box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
-  background-color: #fff;
+  background-color: #21690F;
 }
 
 @media (max-width: 1199px) {
@@ -633,7 +634,7 @@ h6 {
 
   #main,
   #footer {
-    margin-left: 300px;
+    margin-left: 250px;
   }
 }
 
@@ -684,9 +685,9 @@ h6 {
   align-items: center;
   font-size: 15px;
   font-weight: 600;
-  color: #4154f1;
+  color: #21690F;
   transition: 0.3;
-  background: #f6f9ff;
+  background: #fff;
   padding: 10px 15px;
   border-radius: 4px;
 }
@@ -694,25 +695,25 @@ h6 {
 .sidebar-nav .nav-link i {
   font-size: 16px;
   margin-right: 10px;
-  color: #4154f1;
+  color: #21690F;
 }
 
 .sidebar-nav .nav-link.collapsed {
-  color: #012970;
-  background: #fff;
+  color: #fff;
+  background: #21690F;
 }
 
 .sidebar-nav .nav-link.collapsed i {
-  color: #899bbd;
+  color: #fff;
 }
 
 .sidebar-nav .nav-link:hover {
-  color: #4154f1;
-  background: #f6f9ff;
+  color: #21690F;
+  background: #fff;
 }
 
 .sidebar-nav .nav-link:hover i {
-  color: #4154f1;
+  color: #21690F;
 }
 
 .sidebar-nav .nav-link .bi-chevron-down {
@@ -805,7 +806,7 @@ h6 {
 
 .dashboard .info-card h6 {
   font-size: 28px;
-  color: #012970;
+  color: #21690F;
   font-weight: 700;
   margin: 0;
   padding: 0;
@@ -818,10 +819,12 @@ h6 {
   height: 64px;
   flex-shrink: 0;
   flex-grow: 0;
+  justify-content: center;
+  align-items: center;
 }
 
 .dashboard .sales-card .card-icon {
-  color: #4154f1;
+  color: #21690F;
   background: #f6f6fe;
 }
 
@@ -1222,12 +1225,12 @@ h6 {
 
 .footer .copyright {
   text-align: center;
-  color: #012970;
+  color: #21690F;
 }
 
 .footer .credits {
   padding-top: 5px;
   text-align: center;
   font-size: 13px;
-  color: #012970;
+  color: #21690F;
 }

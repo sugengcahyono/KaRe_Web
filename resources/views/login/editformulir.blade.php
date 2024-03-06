@@ -188,75 +188,7 @@
                 <form action="{{ route('update', ['id' => $pengajuan_kunjungan->id]) }}" method="POST" enctype="multipart/form-data">
                   @csrf
                   @method('PUT')
-                  <!-- Isi formulir -->
-
                   
-
-
-                  <!-- <div class="row mb-3">
-                    <label for="inputText" class="col-sm-2 col-form-label">Asal</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="asal" value="{{ old('asal') }}">
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <label for="inputText" class="col-sm-2 col-form-label">Nama Instansi</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama_instansi" value="{{ old('nama_instansi') }}">
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <label for="inputNumber" class="col-sm-2 col-form-label">Nomor Telepon</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nomor_telepon" value="{{ old('nomor_telepon') }}">
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <label for="inputDate" class="col-sm-2 col-form-label">Tanggal</label>
-                    <div class="col-sm-10">
-                      <input type="date" class="form-control" name="tanggal" value="{{ old('tanggal') }}">
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <label for="inputText" class="col-sm-2 col-form-label">Tujuan Kunjungan</label>
-                    <div class="col-sm-10">
-                      <textarea class="form-control" style="height: 100px" name="tujuan_kunjungan">{{ old('tujuan_kunjungan') }}</textarea>
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label">Kategori</label>
-                    <div class="col-sm-10">
-                      <select class="form-select" aria-label="Default select example" name="kategori">
-                        <option value="Kelompok">Kelompok</option>
-                        <option value="Individu">Individu</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <label for="inputNumber" class="col-sm-2 col-form-label">Jumlah Orang</label>
-                    <div class="col-sm-10">
-                      <input type="number" class="form-control" name="jumlah_orang" value="{{ old('jumlah_orang') }}">
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-10">
-                      <button type="submit" class="btn btn-primary">Kirim</button>
-                    </div>
-                  </div> -->
-                  <!-- </form> -->
-
-                  <!-- <button type="submit" class="btn btn-primary">Kirim</button> -->
-                  <!-- <form method="post" action="/formulirkunjungan/{{ $pengajuan_kunjungan->id }}/edit"> -->
-                  <!-- <input type="hidden" name="formulir_id" value="{{ $pengajuan_kunjungan->id }}"> -->
-
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
@@ -273,7 +205,7 @@
                   <div class="row mb-3">
                     <label for="inputEmail" class="col-sm-2 col-form-label">Nama Instansi</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama_instansi" value="{{ $pengajuan_kunjungan->nama_instansi_kunjungan }}">
+                      <input type="text" class="form-control" name="nama_instansi_kunjungan" value="{{ $pengajuan_kunjungan->nama_instansi_kunjungan }}">
                     </div>
                   </div>
 

@@ -1,18 +1,14 @@
 <?php
 
-// File: app/Models/PengajuanKunjungan.php
+// File: app/Models/FormulirKunjungan.php
 
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-// use app\Models\PengajuanKunjungan;
 
-
-
-class PengajuanKunjungan extends Model
+class EditFormulir extends Model
 {
-    protected $table = 'pengajuan_kunjungan'; // Gantilah 'pengajuan_kunjungan' sesuai dengan nama tabel yang sesuai di database
-
+    protected $table = 'pengajuan_kunjungan'; 
     protected $fillable = [
         'nama_kunjungan',
         'alamat_kunjungan',
@@ -22,9 +18,7 @@ class PengajuanKunjungan extends Model
         'tujuan_kunjungan',
         'status_kunjungan',
         'alasan_status_kunjungan',
-        // Tambahkan atribut lainnya sesuai kebutuhan
     ];
 
-    // Jika Anda tidak menggunakan timestamp (created_at dan updated_at)
     public $timestamps = true;
 }
