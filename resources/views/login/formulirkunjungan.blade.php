@@ -18,18 +18,16 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <!-- <link href="assets/css/style.css" rel="stylesheet"> -->
-  <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-
+  <link href="assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: NiceAdmin
@@ -46,31 +44,21 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
+      <i class="bi bi-list toggle-sidebar-btn"></i>
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/kare.png" alt="">
+        <img src="{{ asset('assets/img/kare.png')}}" alt="">
         <span class="d-none d-lg-block">Kartoharjo Recycle</span>
       </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
-
-    <!-- <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-      </form> -->
-    </div><!-- End Search Bar -->
 
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
 
-
-        </li><!-- End Messages Nav -->
-
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">Rama</span>
+            <img src="{{ asset('nice-admin/assets/img/profile-img.jpg')}}" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Ninuu</span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
@@ -113,7 +101,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" href="login">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -184,119 +172,81 @@
                 <h5 class="card-title">Formulir Pengajuan Kunjungan</h5>
 
                 <!-- Elemen Formulir Umum -->
-                <!-- <form method="POST" action="{{ route('formulirkunjungan') }}"> -->
-                <form action="{{ route('update', ['id' => $pengajuan_kunjungan->id]) }}" method="POST" enctype="multipart/form-data">
-                  @csrf
-                  @method('PUT')
-                  <!-- Isi formulir -->
-
-                  
-
-
-                  <!-- <div class="row mb-3">
-                    <label for="inputText" class="col-sm-2 col-form-label">Asal</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="asal" value="{{ old('asal') }}">
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <label for="inputText" class="col-sm-2 col-form-label">Nama Instansi</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama_instansi" value="{{ old('nama_instansi') }}">
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <label for="inputNumber" class="col-sm-2 col-form-label">Nomor Telepon</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nomor_telepon" value="{{ old('nomor_telepon') }}">
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <label for="inputDate" class="col-sm-2 col-form-label">Tanggal</label>
-                    <div class="col-sm-10">
-                      <input type="date" class="form-control" name="tanggal" value="{{ old('tanggal') }}">
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <label for="inputText" class="col-sm-2 col-form-label">Tujuan Kunjungan</label>
-                    <div class="col-sm-10">
-                      <textarea class="form-control" style="height: 100px" name="tujuan_kunjungan">{{ old('tujuan_kunjungan') }}</textarea>
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label">Kategori</label>
-                    <div class="col-sm-10">
-                      <select class="form-select" aria-label="Default select example" name="kategori">
-                        <option value="Kelompok">Kelompok</option>
-                        <option value="Individu">Individu</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <label for="inputNumber" class="col-sm-2 col-form-label">Jumlah Orang</label>
-                    <div class="col-sm-10">
-                      <input type="number" class="form-control" name="jumlah_orang" value="{{ old('jumlah_orang') }}">
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-10">
-                      <button type="submit" class="btn btn-primary">Kirim</button>
-                    </div>
-                  </div> -->
-                  <!-- </form> -->
-
-                  <!-- <button type="submit" class="btn btn-primary">Kirim</button> -->
-                  <!-- <form method="post" action="/formulirkunjungan/{{ $pengajuan_kunjungan->id }}/edit"> -->
-                  <!-- <input type="hidden" name="formulir_id" value="{{ $pengajuan_kunjungan->id }}"> -->
-
+                <form method="POST" action="{{ route('store') }}">
+                  @csrf <!-- Tambahkan token CSRF untuk keamanan -->
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama" value="{{ $pengajuan_kunjungan->nama_kunjungan }}">
+                      <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama') }}" placeholder="Masukkan Nama">
+                      @error('nama')
+                      <div class="invalid-feedback text-danger">
+                        Nama Harus Diisi
+                      </div>
+                      @enderror
                     </div>
                   </div>
+
                   <div class="row mb-3">
                     <label for="inputEmail" class="col-sm-2 col-form-label">Asal</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="asal" value="{{ $pengajuan_kunjungan->alamat_kunjungan }}">
+                      <input type="text" class="form-control @error('asal') is-invalid @enderror" name="asal" value="{{ old('asal') }}" placeholder="Masukkan Asal">
+                      @error('asal')
+                      <div class="invalid-feedback text-danger">
+                        Email Harus Diisi
+                      </div>
+                      @enderror
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="inputEmail" class="col-sm-2 col-form-label">Nama Instansi</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama_instansi" value="{{ $pengajuan_kunjungan->nama_instansi_kunjungan }}">
+                      <input type="text" class="form-control @error('nama_instansi') is-invalid @enderror" name="nama_instansi" value="{{ old('nama_instansi') }}" placeholder="Masukan Instansi">
+                      @error('nama_instansi')
+                      <div class="invalid-feedback text-danger">
+                        Nama Instansi Harus Diisi
+                      </div>
+                      @enderror
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="inputNumber" class="col-sm-2 col-form-label">Nomor Telepon</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nomor_telepon" value="{{ $pengajuan_kunjungan->no_hp_kunjungan }}">
+                      <input type="number" class="form-control @error('nomor_telepon') is-invalid @enderror" name="nomor_telepon" value="{{ old('nomor_telepon') }}" placeholder="Masukkan Nomor Telepon" pattern="[0-9]+" title="Harus berisi hanya angka">
+                      @error('nomor_telepon')
+                      <div class="invalid-feedback text-danger">
+                        Nomor Telepon Harus Diisi
+                      </div>
+                      @enderror
                     </div>
                   </div>
+
 
                   <div class="row mb-3">
                     <label for="inputDate" class="col-sm-2 col-form-label">Tanggal</label>
                     <div class="col-sm-10">
-                      <input type="date" class="form-control" name="tanggal" value="{{ $pengajuan_kunjungan->tanggal_kunjungan }}">
+                      <input type="date" class="form-control @error('tanggal') is-invalid @enderror" name="tanggal" value="{{ old('tanggal') }}">
+                      @error('tanggal')
+                      <div class="invalid-feedback text-danger">
+                        Harap Memilih Tanggal
+                      </div>
+                      @enderror
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="inputPassword" class="col-sm-2 col-form-label">Tujuan Kunjungan</label>
                     <div class="col-sm-10">
-                      <textarea class="form-control" style="height: 100px" name="tujuan_kunjungan" value="{{ $pengajuan_kunjungan->tujuan_kunjungan }}"></textarea>
+                      <textarea class="form-control @error('tujuan_kunjungan') is-invalid @enderror" style="height: 100px" name="tujuan_kunjungan" placeholder="Masukkan Tujuan Kunjungan"></textarea>
+                      @error('tujuan_kunjungan')
+                      <div class="invalid-feedback text-danger">
+                        Tujuan Kunjungan Harus Diisi
+                      </div>
+                      @enderror
                     </div>
                   </div>
+
 
                   <div class="row mb-3">
                     <label class="col-sm-2 col-form-label">Kategori</label>
@@ -311,39 +261,37 @@
                   <div class="row mb-3">
                     <label for="inputEmail" class="col-sm-2 col-form-label">Jumlah Orang</label>
                     <div class="col-sm-10">
-                      <input type="number" class="form-control" name="jumlah_orang" value="{{ $pengajuan_kunjungan->alasan_status_kunjungan }}">
+                      <input type="number" class="form-control @error('jumlah_kunjungan') is-invalid @enderror" name="jumlah_orang" value="{{ old('jumlah_kunjungan') }}" placeholder="Masukkan Jumlah Orang">
+                      @error('jumlah_orang')
+                      <div class="invalid-feedback text-danger">
+                        Jumlah Orang Harus Diisi
+                      </div>
+                      @enderror
                     </div>
                   </div>
-
-                  <!-- <div class="row mb-3">
-                     <div class="col-sm-2"></div>
-                    <div class="col-sm-10">
-                    <button type="submit" class="btn btn-primary">Edit</button>
-                    </div>
-                  </div> -->
-
-                  <!-- ... (elemen formulir lainnya) ... -->
 
                   <div class="row mb-3">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-10">
-                      <button type="submit" class="btn btn-primary">Edit</button>
+                      <button type="submit" class="btn btn-success mb-2">
+                        Kirim <span class="badge bg-white text-success"></span>
+                      </button>
+                      <!-- <button type="submit" class="btn btn-primary">Kirim</button> -->
                     </div>
                   </div>
                 </form>
+
               </div>
-
-
-
-
             </div>
-          </div>
 
+          </div>
         </div>
-      </div>
     </section>
 
   </main><!-- End #main -->
+
+
+
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
@@ -362,17 +310,17 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="{{ asset('assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
-  <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('assets/vendor/chart.js/chart.umd.js') }}"></script>
-  <script src="{{ asset('assets/vendor/echarts/echarts.min.js') }}"></script>
-  <script src="{{ asset('assets/vendor/quill/quill.min.js') }}"></script>
-  <script src="{{ asset('assets/vendor/simple-datatables/simple-datatables.js')}}"></script>
-  <script src="{{ asset('assets/vendor/tinymce/tinymce.min.js')}}"></script>
-  <script src="{{ asset('assets/vendor/php-email-form/validate.js')}}"></script>
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="{{ asset('assets/js/main.js')}}"></script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 

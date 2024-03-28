@@ -10,6 +10,7 @@ class FormulirKunjungan extends Model
 {
     protected $table = 'pengajuan_kunjungan'; 
     protected $fillable = [
+        'id_kunjungan',
         'nama_kunjungan',
         'alamat_kunjungan',
         'nama_instansi_kunjungan',
@@ -17,7 +18,9 @@ class FormulirKunjungan extends Model
         'tanggal_kunjungan',
         'tujuan_kunjungan',
         'status_kunjungan',
+        'jumlah_kunjungan',
         'alasan_status_kunjungan',
+
     ];
 
     public $timestamps = true;

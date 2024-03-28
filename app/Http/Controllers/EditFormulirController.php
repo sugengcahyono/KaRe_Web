@@ -12,18 +12,6 @@ class EditFormulirController extends Controller
         return view('login.editformulir');
     }
 
-    // public function edit(int $id)
-    // {
-    //     // Mengambil data formulir kunjungan berdasarkan ID
-    //     $data = FormulirKunjungan::findOrFail($id);
-
-    //     // Jika data formulir tidak ditemukan, Anda dapat menangani kasus ini sesuai kebutuhan
-    //     // Contoh: return redirect()->back()->with('error', 'Formulir tidak ditemukan');
-
-    //     // Tampilkan halaman untuk mengedit formulir
-    //     return view('login.detailpengajuan', compact('data'));
-    // }
-
     public function edit(Request $request, $id)
     {
         // Mengambil data formulir kunjungan berdasarkan ID

@@ -60,13 +60,13 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a href="{{ route('home') }}" class="active">Beranda</a></li>
-                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="about.html" class="active">Tentang Kami</a></li>
                     <!-- <li><a href="services.html"></a></li> -->
 
-                    <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                    <li class="dropdown"><a href="#" class="active"><span>Layanan</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
-                            <li><a href="{{ route('layanankunjungan') }}">Layanan Kunjungan</a></li>
-                            <li class="dropdown"><a href="{{ route('layanansampah') }}"><span>Layanan Sampah</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                            <li><a href="{{ route('layanankunjungan') }}" class="active">Layanan Kunjungan</a></li>
+                            <li class="dropdown"><a href="{{ route('layanansampah') }}" class="active"><span>Layanan Sampah</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                                 <ul>
 
                                     <li><a href="{{ route('layanansampah') }}">Penjemputan Sampah</a></li>
@@ -75,16 +75,19 @@
                                 </ul>
 
                             </li>
-                            <li><a href="{{ route('layanantabungan') }}">Layanan Tabungan</a></li>
+                            <li><a href="{{ route('layanantabungan') }}" class="active">Layanan Tabungan</a></li>
                             <!-- <li><a href="#">Drop Down 3</a></li>
                             <li><a href="#">Drop Down 4</a></li> -->
                         </ul>
-                    <li><a href="{{ route('galeri') }}">Galeri</a></li>
+                    <li><a href="{{ route('galeri') }}" class="active">Galeri</a></li>
                     </li>
-                    <li><a href="{{ route('lokasi') }}">Lokasi</a></li>
+                    <li><a href="{{ route('lokasi') }}" class="active">Lokasi</a></li>
 
                     <a class="login-blade" href="{{ route('login') }}">
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" class="btn btn-success mb-2">
+                            Login <span class="badge bg-white text-success"></span>
+                        </button>
+                        <!-- <button type="submit" class="btn btn-primary">Login</button> -->
                         <!-- Login -->
                         <!-- <div class="login-box"></div> -->
                     </a>
@@ -122,39 +125,31 @@
         <!-- Add your head content here -->
     </head>
 
-    <body>
-        <!-- Your existing HTML code -->
-        <footer id="footer" class="footer">
-            <div class="container">
-                <div class="row gy-4">
-                    <div class="col-lg-5 col-md-12 footer-info">
-                        <a href="index.html" class="logo d-flex align-items-center">
-                            <span>TPST Kartoharjo</span>
-                        </a>
-                        <p>Jl. Mayjen Sutoyo No.59, Strenan, Kartoharjo, Kec. Nganjuk, Kabupaten Nganjuk, Jawa Timur 64416</p>
-                    </div>
-                    <div class="col-lg-7 col-md-12">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="copyright">
-                                    &copy; Copyright <strong><span>Nama Kelompok</span></strong>. All Rights Reserved
-                                    <p>Designed by <a href="https://bootstrapmade.com/">Nama Kelompok</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
 
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-5 col-md-12 footer-info">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                        <span>TPST Kartoharjo</span>
+                    </a>
+                    <p>Jl. Mayjen Sutoyo No.59, Strenan, Kartoharjo, Kec. Nganjuk, Kabupaten Nganjuk, Jawa Timur 64416</p>
+                </div>
+
+                <div class="col-lg-7 col-md-12 d-flex justify-content-end">
+                    <div class="copyright ms-auto">
+                        &copy; Copyright <strong><span>Nama Kelompok</span></strong>. All Rights Reserved
+                        <p>Designed by Nama Kelompok</p>
+                    </div>
                 </div>
             </div>
-            </div>
-            </div>
-            </div>
-        </footer>
+        </div>
+    </footer>
 
-        </footer>
-        <!-- Add your scripts and other body content here -->
-    </body>
+
+    <!-- Add your scripts and other body content here -->
+</body>
 
 </html>
 

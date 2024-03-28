@@ -5,10 +5,10 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="hero d-flex align-items-center">
   <div class="container">
-    <div class="row gy-4 d-flex justify-content-between">
+    <div class="row gy-4 d-flex justify-content-between"> 
       <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
         <h2 data-aos="fade-up"></h2>
-        <p data-aos="fade-up" data-aos-delay="100">TPST Kartoharjo berada di bawah naungan Dinas Lingkungan Hidup (DLH) Kabupaten Nganjuk merupakan fasilitas pengelolaan sampah pemerintah daerah. TPST ini melibatkan pemilahan dan pengelolaan sampah sesuai standar lingkungan. DLH mengawasi operasional TPST, memastikan kepatuhan regulasi, dan terlibat dalam pendidikan lingkungan.</p>
+        <p data-aos="fade-up" data-aos-delay="100" class="custom-justify">TPST Kartoharjo berada di bawah naungan Dinas Lingkungan Hidup (DLH) Kabupaten Nganjuk merupakan fasilitas pengelolaan sampah pemerintah daerah. TPST ini melibatkan pemilahan dan pengelolaan sampah sesuai standar lingkungan. DLH mengawasi operasional TPST, memastikan kepatuhan regulasi, dan terlibat dalam pendidikan lingkungan.</p>
 
 
         <div class="row gy-4" data-aos="fade-up" data-aos-delay="400">
@@ -79,7 +79,7 @@
         <div class="col-lg-6 content order-last  order-lg-first">
           <h3>Struktur Organisasi</h3>
           <p>
-            Dolor iure expedita id fuga asperiores qui sunt consequatur minima. Quidem voluptas deleniti. Sit quia molestiae quia quas qui magnam itaque veritatis dolores. Corrupti totam ut eius incidunt reiciendis veritatis asperiores placeat.
+            Tempat pengelolaan sampah terpadu (TPST) Kartoharjo mulai beroperasi pada tanggal LUPA WKWK tahun 2016. TPST ini dikelola oleh bapak-ibu pekerja sapu jalanan?
           </p>
           <ul>
             <li data-aos="fade-up" data-aos-delay="100">
@@ -125,8 +125,8 @@
             <div class="card-img">
               <img src="assets/img/kegiatan3.jpeg" alt="" class="img-fluid">
             </div>
-            <h3><a href="{{ route('layanansampah') }}" class="stretched-link">Layanan Sampah</a></h3>
-            <p>Program layanan sampah memiliki 2 sub layanan yaitu layanan penjemputan sampah serta pembelian pupuk</p>
+            <h3><a href="{{ route('layanansampah') }}" class="stretched-link ">Layanan Sampah</a></h3>
+            <p class="custom-justify">Program layanan sampah memiliki 2 sub layanan yaitu layanan penjemputan sampah serta pembelian pupuk</p>
           </div>
         </div><!-- End Card Item -->
 
@@ -136,7 +136,7 @@
               <img src="assets/img/kegiatan3.jpeg" alt="" class="img-fluid">
             </div>
             <h3><a href="{{ route('layanankunjungan') }}" class="stretched-link">Layanan Kunjungan</a></h3>
-            <p>Program pengajuan kunjungan merupakan layanan yang dapat digunakan oleh pengguna untuk melakukan pengajuan kunjungan sebelum datang ke TPST</p>
+            <p class="custom-justify">Program pengajuan kunjungan merupakan layanan yang dapat digunakan oleh pengguna untuk melakukan pengajuan kunjungan sebelum datang ke TPST</p>
           </div>
         </div><!-- End Card Item -->
 
@@ -146,7 +146,7 @@
               <img src="assets/img/kegiatan3.jpeg" alt="" class="img-fluid">
             </div>
             <h3><a href="{{ route('layanantabungan') }}" class="stretched-link">Layanan Tabungan</a></h3>
-            <p>Program tabungan sampah merupakan kegiatan menabung sampah yang sudah dipilah sesuai jenisnya. Sampah yang ditabung akan ditimbang, dan hasil penimbangan akan dikonversikan ke dalam rupiah sesuai dengan harga sampah saat penimbangan</p>
+            <p class="custom-justify">Program tabungan sampah merupakan kegiatan menabung sampah yang sudah dipilah sesuai jenisnya. Sampah yang ditabung akan ditimbang, dan hasil penimbangan akan dikonversikan ke dalam rupiah sesuai dengan harga sampah saat penimbangan</p>
 
           </div>
         </div><!-- End Card Item -->
@@ -164,8 +164,8 @@
         <div class="col-lg-4 text-center">
           <h3>VISI</h3>
           <p>Kebersihan Kunci Keindahan Bersama</p> -->
-          <!-- <a class="cta-btn" href="#">Call To Action</a> -->
-        <!-- </div>
+  <!-- <a class="cta-btn" href="#">Call To Action</a> -->
+  <!-- </div>
       </div>
 
     </div> -->
@@ -187,7 +187,7 @@
         </div>
         <div class="col-md-7">
           <h3>Pengumpulan Sampah</h3>
-          <p class="fst-serif">
+          <p class="fst-serif custom-justify">
             Pengumpulan sampah adalah proses pengambilan limbah dari rumah tangga, area komersial, dan industri oleh layanan pengelola sampah. Sampah diangkut menggunakan kendaraan khusus ke tempat pemrosesan seperti Tempat Pemrosesan Sampah Terpadu (TPST) atau fasilitas daur ulang. Penduduk mungkin diminta untuk memilah sampah. Di tempat pemrosesan, sampah diolah untuk mengurangi volume, menghasilkan energi, atau didaur ulang. Pematuhan terhadap prosedur pengumpulan yang ditetapkan oleh otoritas setempat penting untuk manajemen limbah yang efektif dan berkelanjutan.
           </p>
 
@@ -200,7 +200,7 @@
         </div>
         <div class="col-md-7 order-2 order-md-1">
           <h3>Daur Ulang</h3>
-          <p class="fst-serif">
+          <p class="fst-serif custom-justify">
             Daur ulang sampah adalah proses konversi limbah menjadi produk baru untuk mengurangi limbah yang masuk ke tempat pembuangan sampah. Ini melibatkan pengumpulan, pemilahan, dan pembersihan limbah, diikuti oleh pemrosesan untuk menghasilkan bahan baku. Bahan tersebut kemudian digunakan untuk membuat produk daur ulang seperti kertas, plastik, atau logam. Daur ulang membantu mengurangi penggunaan sumber daya alam, energi, dan volume limbah, serta berkontribusi pada keberlanjutan lingkungan. Kesadaran masyarakat terhadap daur ulang adalah kunci dalam menciptakan lingkungan yang lebih berkelanjutan.
           </p>
         </div>
@@ -212,8 +212,11 @@
         </div>
         <div class="col-md-7">
           <h3>Pengelolaan Pupuk</h3>
-          <p>Pengelolaan sampah menjadi pupuk melibatkan pengomposan atau fermentasi bahan organik dari sampah untuk menghasilkan pupuk kompos. Melalui proses ini, sisa-sisa makanan, daun kering, atau limbah pertanian diurai oleh mikroorganisme menjadi humus yang kaya nutrisi. Pupuk kompos yang dihasilkan dapat digunakan sebagai pembenah tanah, mengurangi volume sampah di tempat pembuangan, serta mendukung konsep daur ulang dan pertanian berkelanjutan.</p>
+          <p class="fst-serif custom-justify">
+            Pengelolaan sampah menjadi pupuk melibatkan pengomposan atau fermentasi bahan organik dari sampah untuk menghasilkan pupuk kompos. Melalui proses ini, sisa-sisa makanan, daun kering, atau limbah pertanian diurai oleh mikroorganisme menjadi humus yang kaya nutrisi. Pupuk kompos yang dihasilkan dapat digunakan sebagai pembenah tanah, mengurangi volume sampah di tempat pembuangan, serta mendukung konsep daur ulang dan pertanian berkelanjutan.</p>
+          <p>
         </div>
+
       </div><!-- Features Item -->
 </main><!-- End #main -->
 

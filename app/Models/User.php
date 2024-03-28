@@ -17,11 +17,20 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table = 'user'; 
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'id_user',        
+        'nama_user',
+        'email_user',
+        'password_user',
+        'alamat_user',
+        'no_hp_user',
+        'foto_user',
+        'level_user',
+
     ];
+    public $timestamps = true;
+
 
     /**
      * The attributes that should be hidden for serialization.

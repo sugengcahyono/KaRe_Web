@@ -128,14 +128,14 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link " href="kunjungan">
+        <a class="nav-link collapsed" href="kunjungan">
           <i class="bi bi-people-fill"></i>
           <span>Kunjungan</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
+        <a class="nav-link" href="tabungan">
           <i class="bi bi-wallet2"></i>
           <span>Tabungan</span>
         </a>
@@ -147,63 +147,69 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Kunjungan</h1>
+      <h1>Tabungan</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{ route('laykunjungan') }}">Kunjungan</a></li>
-          <li class="breadcrumb-item">Pangajuan</li>
-          <!-- <li class="breadcrumb-item active">Blank</li> -->
+          <li class="breadcrumb-item"><a href="index.html">Tabungan</a></li>
+          <!-- <li class="breadcrumb-item">Pages</li>
+          <li class="breadcrumb-item active">Blank</li> -->
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
-    <div class="button-container">
-      <a href="{{ route('formulirkunjungan') }}" class="btn btn-lg btn-primary btn-lg w-10 mt-2 mb-2">
-        <i class="bi bi-plus-lg"></i>
-        <span>Tambah</span>
-      </a>
-    </div>
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
 
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Total tabungan : Rp. 32.000,00</h4>
 
-    <div class="col lg-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Tabel Pengajuan Kunjungan</h5>
+              <!-- Table with stripped rows -->
+              <table class="table datatable">
+                <thead>
+                  <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Tanggal</th>
+                    <th scope="col">Berat</th>
+                    <th scope="col">Keterangan</th>
+                    <th scope="col">Jumlah</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>2 Maret 2024</td>
+                    <td>5 kg</td>
+                    <td>sampah plastik 3 kg, kertas 2 kg</td>
+                    <td>15.000</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>29 Februari 2024</td>
+                    <td>1 kg</td>
+                    <td>1 kg sampah kertas</td>
+                    <td>7000</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>20 maret 2024</td>
+                    <td>3 kg</td>
+                    <td>2 kg sampah botol, 1 kg sampah kardus</td>
+                    <td>10.000</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
 
-          <!-- Table with stripped rows -->
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">No.</th>
-                <th scope="col">Nama</th>
-                <th scope="col">Tanggal</th>
-                <th scope="col">Tujuan</th>
-                <th scope="col">Aksi</th>
-              </tr>
-            </thead>
-            <tbody>
-              @foreach($data as $item)
-              <form method="POST" action="{{ route('formulirkunjungan', ['id' => $item->id]) }}">
-                <tr>
-                  <td>{{ $item->id }}</td>
-                  <td>{{ $item->nama_kunjungan }}</td>
-                  <td>{{ $item->tujuan_kunjungan }}</td>
-                  <td>{{ $item->tanggal_kunjungan }}</td>
-                  <td>
-                    <a href="{{ url('formulirkunjungan/'.$item->id.'/edit') }}" class="btn btn-success"><i class="bi bi-pencil-fill"></i></a>
-                    <a href="{{ url('formulirkunjungan/'.$item->id.'/delete') }}" class="btn btn-danger" data-id="{{ $item->id }}" data-toggle="modal" data-target="#modal-hapus"><i class="bi bi-trash3-fill"></i></button>
-                  </td>
-                </tr>
-                @endforeach
-                <!-- End PHP Loop -->
-            </tbody>
-          </table>
-
-          <!-- End Table with stripped rows -->
+            </div>
+          </div>
 
         </div>
       </div>
-    </div>
+    </section>
+
+
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->

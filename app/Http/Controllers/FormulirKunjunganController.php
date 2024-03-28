@@ -5,14 +5,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\FormulirKunjungan;
-use App\Models\PengajuanKunjungan;
 
 class FormulirKunjunganController extends Controller
 {
     public function index()
     {
-        return view('login.formulirkunjungan');
+        $pengajuan_kunjungan = FormulirKunjungan::latest()->paginate(5);
+
+        return view('login.formulirkunjungan', compact('pengajuan_kunjungan'));
     }
+
     public function show()
     {
         $data = FormulirKunjungan::all();
@@ -22,21 +24,20 @@ class FormulirKunjunganController extends Controller
 
     public function create()
     {
-        return view('create');
+        return view('login.formulirkunjungan');
     }
 
     public function store(Request $request)
     {
         // Validasi data yang dikirimkan dari formulir
         $request->validate([
-            'nama' => 'required',
-            'asal' => 'required',
-            'nama_instansi' => 'required',
-            'nomor_telepon' => 'required',
-            'tanggal' => 'required',
-            'tujuan_kunjungan' => 'required',
-            // 'kategori' => 'required',
-            'jumlah_orang' => 'required',
+            'nama' => 'required|max:50',
+            'asal' => 'required|max:20',
+            'nama_instansi' => 'required|max:50',
+            'nomor_telepon' => 'required|numeric',
+            'tanggal' => 'required|date',
+            'tujuan_kunjungan' => 'required|max:50',
+            'jumlah_orang' => 'required|integer',
         ]);
 
         $pengajuan_kunjungan = new FormulirKunjungan();
@@ -46,33 +47,19 @@ class FormulirKunjunganController extends Controller
         $pengajuan_kunjungan->no_hp_kunjungan = $request->input('nomor_telepon');
         $pengajuan_kunjungan->tanggal_kunjungan = $request->input('tanggal');
         $pengajuan_kunjungan->tujuan_kunjungan = $request->input('tujuan_kunjungan');
-        // $pengajuan_kunjungan->status_kunjungan = $request->input('kategori');
-        $pengajuan_kunjungan->alasan_status_kunjungan = $request->input('jumlah_orang');
+        $pengajuan_kunjungan->jumlah_kunjungan = $request->input('jumlah_orang');
         $pengajuan_kunjungan->save();
 
         // Redirect pengguna setelah pengguna berhasil ditambahkan
         return redirect()->route('detailpengajuan')->with('success', 'Pengajuan Berhasil Dilakukan');
     }
-    // File: app/Http/Controllers/FormulirKunjunganController.php
 
-    // public function detail($id)
-    // {
-    //     $pengajuan_kunjungan = FormulirKunjungan::find($id);
-
-    //     if (!$pengajuan_kunjungan) {
-    //         return abort(404); // Handle jika ID tidak ditemukan
-    //     }
-
-    //     return view('login.detailpengajuan', compact('pengajuan_kunjungan'));
-    // }
     public function edit(Request $request, $id)
     {
-        
-        $pengajuan_kunjungan = FormulirKunjungan::find($id);
-            // return $pengajuan_kunjungan;
-        return view('login.editformulir', compact('pengajuan_kunjungan'));
 
-        
+        $pengajuan_kunjungan = FormulirKunjungan::find($id);
+        // return $pengajuan_kunjungan;
+        return view('login.editformulir', compact('pengajuan_kunjungan'));
     }
     public function update(Request $request, $id)
     {
@@ -84,19 +71,21 @@ class FormulirKunjunganController extends Controller
             'tanggal' => 'required',
             'tujuan_kunjungan' => 'required',
             'jumlah_orang' => 'required',
+
         ]);
-    
+
         $pengajuan_kunjungan = FormulirKunjungan::findOrFail($id);
         $pengajuan_kunjungan->update([
 
-    
+
             'nama_kunjungan' => $request->nama,
             'alamat_kunjungan' => $request->asal,
             'nama_instansi_kunjungan' => $request->nama_instansi_kunjungan,
             'no_hp_kunjungan' => $request->nomor_telepon,
             'tanggal_kunjungan' => $request->tanggal,
             'tujuan_kunjungan' => $request->tujuan_kunjungan,
-            'alasan_status_kunjungan' => $request->jumlah_orang,
+            'jumlah_kunjungan' => $request->jumlah_orang,
+ 
         ]);
 
         // Redirect pengguna setelah pengguna berhasil diubah
@@ -111,8 +100,5 @@ class FormulirKunjunganController extends Controller
         $pengajuan_kunjungan->delete();
 
         return redirect()->back()->with('success', 'Data Berhasil Dihapus');
-
     }
 }
-
-

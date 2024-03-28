@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LokasiController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\LayananKunjunganController;
 use App\Http\Controllers\LayananTabunganController;
@@ -15,8 +15,10 @@ use App\Http\Controllers\BerandaLoginController;
 use App\Http\Controllers\DetailPengajuanController;
 use App\Http\Controllers\LayKunjunganController;
 use App\Http\Controllers\DetailFormulirController;
-use App\Http\Controllers\EditFormulirController;
-use App\Http\Controllers\DeleteFormulirController;
+use App\Http\Controllers\CobaErorController;
+use App\Http\Controllers\FormKunjunganController;
+use App\Http\Controllers\TabunganController;
+
 
 
 
@@ -46,7 +48,10 @@ Route::get('/kegiatan', [KegiatanController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 
 Route::get('/lokasi', [LokasiController::class, 'index'])->name('lokasi');
-Route::get('/profile', [ProfileController::class, 'index']);
+
+Route::get('/profil', [ProfilController::class, 'index'])->name('profil');
+Route::post('/profil/proses', [ProfilController::class, 'index'])->name('profil');
+
 Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri');
 Route::get('/layanankunjungan', [LayananKunjunganController::class, 'index'])->name('layanankunjungan');
 Route::get('/layanantabungan', [LayananTabunganController::class, 'index'])->name('layanantabungan');
@@ -57,14 +62,19 @@ Route::get('/detailpengajuan', [DetailPengajuanController::class, 'index']) ->na
 Route::get('/laykunjungan', [LayKunjunganController::class, 'index']) ->name('laykunjungan');
 Route::get('/detailpengajuan', [DetailPengajuanController::class, 'index'])->name('detailpengajuan');
 
-// Route::get('/detailpengajuan/{id}', [FormulirKunjunganController::class, 'detail'])->name('detail');
+
+// CRUD FORMULIR KUNJUNGAN
+// Route::resource('/formulirkunjungan', FormulirKunjunganController::class);
 Route::get('/formulirkunjungan', [FormulirKunjunganController::class, 'index']) ->name('formulirkunjungan');
 Route::get('/create', [FormulirKunjunganController::class, 'create']) ->name('create');
 Route::post('/store', [FormulirKunjunganController::class, 'store'])->name('store');
-// Route::put('/store', [FormulirKunjunganController::class, 'store'])->name('store');
 Route::get('formulirkunjungan/{id}/edit', [FormulirKunjunganController::class, 'edit']) ->name('edit');
 Route::put('formulirkunjungan/{id}', [FormulirKunjunganController::class, 'update']) ->name('update');
-Route::delete('/deleteformulir/{id}', [DeleteFormulirController::class, 'delete']) ->name('deleteformulir');
+Route::delete('/deleteformulir/{id}', [FormulirKunjunganController::class, 'delete']) ->name('deleteformulir');
+Route::get('/show', [FormulirKunjunganController::class, 'show'])->name('show');
+
+Route::get('/cobaerror', [CobaErorController::class, 'index'])->name('index');
+
 
 
 
@@ -73,5 +83,6 @@ Route::get('formulirkunjungan/{id}/delete', [FormulirKunjunganController::class,
 Route::get('/show', [FormulirKunjunganController::class, 'show'])->name('show');
 
 Route::get('/detailformulir', [DetailFormulirController::class, 'index']) ->name('detailformulir');
+Route::get('/tabungan', [TabunganController::class, 'index'])->name('tabungan');
 
 

@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-md-7">
                     <!-- <h3>Pengumpulan Sampah</h3> -->
-                    <p class="fst-serif">
+                    <p class="fst-serif custom-justify">
                         Dalam rangka meningkatkan pengelolaan kunjungan ke Tempat Pembuangan Sampah Terpadu (TPST) Kartoharjo, individu atau kelompok yang berminat dapat mengajukan permohonan kunjungan melalui formulir yang disediakan.
                     </p>
 
@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-md-7 order-2 order-md-1">
                     <!-- <h3>Daur Ulang</h3> -->
-                    <p class="fst-serif">
+                    <p class="fst-serif custom-justify">
                         Setelah mengajukan permohonan, pemohon dapat memantau status pengajuan kunjungan melalui akun pengguna yang telah dibuat pada website karttoharjo recycle ini. Setelah mendapatkan konfirmasi, pengunjung dapat melaksanakan kunjungan sesuai jadwal yang telah disepakati, dengan harapan mereka mematuhi pedoman dan aturan selama kunjungan berlangsung.
                     </p>
 
@@ -59,7 +59,7 @@
                 </div>
                 <div class="col-md-7">
                     <!-- <h3>Pengelolaan Pupuk</h3> -->
-                    <p>Layanan ini memberikan panduan yang jelas dan transparan dalam melibatkan masyarakat untuk mengunjungi TPST, menciptakan pengalaman yang lebih terstruktur dan memudahkan pengelolaan fasilitas tersebut.</p>
+                    <p class="custom-justify">Layanan ini memberikan panduan yang jelas dan transparan dalam melibatkan masyarakat untuk mengunjungi TPST, menciptakan pengalaman yang lebih terstruktur dan memudahkan pengelolaan fasilitas tersebut.</p>
 
 
                 </div>
@@ -69,11 +69,10 @@
 
         </div>
     </section><!-- End Features Section -->
-    <button type="submit" class="btn btn-primary float-right mt-3">Yuk Daftar!</button>
+    <div class="container">
+        <button type="submit" class="btn btn-primary">Yuk Daftar!</button>
+    </div>
 
-    <!-- <button type="submit" class="btn btn-primary float-left mt-3">Tes Ke WhatsApp</button> -->
-
-    <!-- <button type="submit" class="btn btn-primary float-left mb-3">Tes Ke WhatsApp</button> -->
 
 
     @endsection

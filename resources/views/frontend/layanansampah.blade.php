@@ -35,7 +35,7 @@
                             <img src="assets/img/sampah1.jpeg" alt="" class="img-fluid">
                         </div>
                         <h3><a href="service-details.html" class="stretched-link">Penjemputan Sampah</a></h3>
-                        <p>TPST menyediakan layanan penjemputan sampah dari masyarakat untuk memudahkan pembuangan sampah secara efisien.</p>
+                        <p class="custom-justify">TPST menyediakan layanan penjemputan sampah dari masyarakat untuk memudahkan pembuangan sampah secara efisien.</p>
                     </div>
                 </div><!-- End Card Item -->
 
@@ -45,7 +45,7 @@
                             <img src="assets/img/sampah2.jpeg" alt="" class="img-fluid">
                         </div>
                         <h3><a href="service-details.html" class="stretched-link">Pembelian Pupuk</a></h3>
-                        <p>TPST memberikan layanan kepada masyarakat untuk membeli pupuk hasil dari pengolahan sampah. </p>
+                        <p class="custom-justify">TPST memberikan layanan kepada masyarakat untuk membeli pupuk hasil dari pengolahan sampah. </p>
                     </div>
                 </div><!-- End Card Item -->
             </div><!-- End Row -->
