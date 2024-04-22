@@ -8,11 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Tabungan extends Model
 {
     use HasFactory;
+    public $timestamps = true;
     protected $table = 'tabungan'; 
+    protected $primaryKey = 'id_tabungan';
+
     protected $fillable = [
-        'id_tabungan',
-        'tanggal_tabungan',
-        'keterangansampah_tabungan',
+        'tgl_tabungan',
+        'ketsampah_tabungan',
         'beratsampah_tabungan',
         'tipe_tabungan',
         'hargasampah_tabungan',
@@ -20,7 +22,10 @@ class Tabungan extends Model
         
 
     ];
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user');
+    }
 
-    public $timestamps = true;
 
 }

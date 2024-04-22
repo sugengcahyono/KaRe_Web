@@ -63,47 +63,31 @@
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
+              <!-- <h6>Kevin Anderson</h6>
+              <span>Web Designer</span> -->
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="{{ route('profil') }}">
                 <i class="bi bi-person"></i>
-                <span>My Profile</span>
+                <span>Akun</span>
               </a>
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+
+
 
             <li>
               <a class="dropdown-item d-flex align-items-center" href="login">
                 <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
+                <span>Keluar</span>
               </a>
             </li>
 
@@ -121,21 +105,21 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="beranda">
+        <a class="nav-link collapsed" href="{{ route('berandalogin') }}">
           <i class="bi bi-grid"></i>
           <span>Beranda</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link " href="users-profile.html">
+        <a class="nav-link " href="{{ route('detailpengajuan') }}">
           <i class="bi bi-people-fill"></i>
           <span>Kunjungan</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
+        <a class="nav-link collapsed" href="{{ route('tabungan') }}">
           <i class="bi bi-wallet2"></i>
           <span>Tabungan</span>
         </a>
@@ -155,9 +139,9 @@
       <h1>Layanan Kunjungan</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
-          <li class="breadcrumb-item">Layanan Kunjungan</li>
-          <li class="breadcrumb-item active">Formulir Pengajuan</li>
+          <!-- <li class="breadcrumb-item"><a href="index.html">Beranda</a></li> -->
+          <!-- <li class="breadcrumb-item">Layanan Kunjungan</li> -->
+          <li class="breadcrumb-item">Formulir Pengajuan</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -177,7 +161,7 @@
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama') }}" placeholder="Masukkan Nama">
+                      <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ old('nama_kunjungan') }}" placeholder="Masukkan Nama">
                       @error('nama')
                       <div class="invalid-feedback text-danger">
                         Nama Harus Diisi
@@ -189,7 +173,7 @@
                   <div class="row mb-3">
                     <label for="inputEmail" class="col-sm-2 col-form-label">Asal</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control @error('asal') is-invalid @enderror" name="asal" value="{{ old('asal') }}" placeholder="Masukkan Asal">
+                      <input type="text" class="form-control @error('asal') is-invalid @enderror" name="asal" value="{{ old('alamat_kunjungan') }}" placeholder="Masukkan Asal">
                       @error('asal')
                       <div class="invalid-feedback text-danger">
                         Email Harus Diisi
@@ -201,7 +185,7 @@
                   <div class="row mb-3">
                     <label for="inputEmail" class="col-sm-2 col-form-label">Nama Instansi</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control @error('nama_instansi') is-invalid @enderror" name="nama_instansi" value="{{ old('nama_instansi') }}" placeholder="Masukan Instansi">
+                      <input type="text" class="form-control @error('nama instansi') is-invalid @enderror" name="nama instansi" value="{{ old('namainstansi_kunjungan') }}" placeholder="Masukan Instansi">
                       @error('nama_instansi')
                       <div class="invalid-feedback text-danger">
                         Nama Instansi Harus Diisi
@@ -213,7 +197,7 @@
                   <div class="row mb-3">
                     <label for="inputNumber" class="col-sm-2 col-form-label">Nomor Telepon</label>
                     <div class="col-sm-10">
-                      <input type="number" class="form-control @error('nomor_telepon') is-invalid @enderror" name="nomor_telepon" value="{{ old('nomor_telepon') }}" placeholder="Masukkan Nomor Telepon" pattern="[0-9]+" title="Harus berisi hanya angka">
+                      <input type="number" class="form-control @error('nomor telepon') is-invalid @enderror" name="nomor telepon" value="{{ old('nohp_kunjungan') }}" placeholder="Masukkan Nomor Telepon" pattern="[0-9]+" title="Harus berisi hanya angka">
                       @error('nomor_telepon')
                       <div class="invalid-feedback text-danger">
                         Nomor Telepon Harus Diisi
@@ -226,7 +210,7 @@
                   <div class="row mb-3">
                     <label for="inputDate" class="col-sm-2 col-form-label">Tanggal</label>
                     <div class="col-sm-10">
-                      <input type="date" class="form-control @error('tanggal') is-invalid @enderror" name="tanggal" value="{{ old('tanggal') }}">
+                      <input type="date" class="form-control @error('tanggal') is-invalid @enderror" name="tanggal" value="{{ old('tgl_kunjungan') }}">
                       @error('tanggal')
                       <div class="invalid-feedback text-danger">
                         Harap Memilih Tanggal
@@ -238,7 +222,7 @@
                   <div class="row mb-3">
                     <label for="inputPassword" class="col-sm-2 col-form-label">Tujuan Kunjungan</label>
                     <div class="col-sm-10">
-                      <textarea class="form-control @error('tujuan_kunjungan') is-invalid @enderror" style="height: 100px" name="tujuan_kunjungan" placeholder="Masukkan Tujuan Kunjungan"></textarea>
+                      <textarea class="form-control @error('tujuan kunjungan') is-invalid @enderror" style="height: 100px" name="tujuan kunjungan" value="{{ old('tujuan_kunjungan') }}" placeholder="Masukkan Tujuan Kunjungan"></textarea>
                       @error('tujuan_kunjungan')
                       <div class="invalid-feedback text-danger">
                         Tujuan Kunjungan Harus Diisi
@@ -261,7 +245,7 @@
                   <div class="row mb-3">
                     <label for="inputEmail" class="col-sm-2 col-form-label">Jumlah Orang</label>
                     <div class="col-sm-10">
-                      <input type="number" class="form-control @error('jumlah_kunjungan') is-invalid @enderror" name="jumlah_orang" value="{{ old('jumlah_kunjungan') }}" placeholder="Masukkan Jumlah Orang">
+                      <input type="number" class="form-control @error('jumlah orang') is-invalid @enderror" name="jumlah orang" value="{{ old('jumlahorang_kunjungan') }}" placeholder="Masukkan Jumlah Orang">
                       @error('jumlah_orang')
                       <div class="invalid-feedback text-danger">
                         Jumlah Orang Harus Diisi

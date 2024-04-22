@@ -60,17 +60,17 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a href="{{ route('home') }}" class="active">Beranda</a></li>
-                    <li><a href="about.html" class="active">Tentang Kami</a></li>
+                    <li><a href="{{ route('tentangkami') }}" class="active">Tentang Kami</a></li>
                     <!-- <li><a href="services.html"></a></li> -->
 
-                    <li class="dropdown"><a href="#" class="active"><span>Layanan</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                    <li class="dropdown"><a class="active"><span>Layanan</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
                             <li><a href="{{ route('layanankunjungan') }}" class="active">Layanan Kunjungan</a></li>
                             <li class="dropdown"><a href="{{ route('layanansampah') }}" class="active"><span>Layanan Sampah</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                                 <ul>
 
-                                    <li><a href="{{ route('layanansampah') }}">Penjemputan Sampah</a></li>
-                                    <li><a href="{{ route('layanansampah') }}">Pembelian Pupuk</a></li>
+                                    <li><a href="{{ route('penjemputansampah') }}">Penjemputan Sampah</a></li>
+                                    <li><a href="{{ route('pembelianpupuk') }}">Pembelian Pupuk</a></li>
 
                                 </ul>
 
@@ -87,9 +87,6 @@
                         <button type="submit" class="btn btn-success mb-2">
                             Login <span class="badge bg-white text-success"></span>
                         </button>
-                        <!-- <button type="submit" class="btn btn-primary">Login</button> -->
-                        <!-- Login -->
-                        <!-- <div class="login-box"></div> -->
                     </a>
                     </li>
 

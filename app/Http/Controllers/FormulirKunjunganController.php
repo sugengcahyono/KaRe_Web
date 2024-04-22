@@ -5,14 +5,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\FormulirKunjungan;
+use App\Models\User;
+
 
 class FormulirKunjunganController extends Controller
 {
     public function index()
     {
-        $pengajuan_kunjungan = FormulirKunjungan::latest()->paginate(5);
+        $kunjungan = FormulirKunjungan::latest()->paginate(5);
 
-        return view('login.formulirkunjungan', compact('pengajuan_kunjungan'));
+        return view('login.formulirkunjungan', compact('kunjungan'));
     }
 
     public function show()
@@ -39,16 +41,18 @@ class FormulirKunjunganController extends Controller
             'tujuan_kunjungan' => 'required|max:50',
             'jumlah_orang' => 'required|integer',
         ]);
+        $user = auth()->user()->id_user;
 
-        $pengajuan_kunjungan = new FormulirKunjungan();
-        $pengajuan_kunjungan->nama_kunjungan = $request->input('nama');
-        $pengajuan_kunjungan->alamat_kunjungan = $request->input('asal');
-        $pengajuan_kunjungan->nama_instansi_kunjungan = $request->input('nama_instansi');
-        $pengajuan_kunjungan->no_hp_kunjungan = $request->input('nomor_telepon');
-        $pengajuan_kunjungan->tanggal_kunjungan = $request->input('tanggal');
-        $pengajuan_kunjungan->tujuan_kunjungan = $request->input('tujuan_kunjungan');
-        $pengajuan_kunjungan->jumlah_kunjungan = $request->input('jumlah_orang');
-        $pengajuan_kunjungan->save();
+        $kunjungan = new FormulirKunjungan();
+        $kunjungan->nama_kunjungan = $request->input('nama');
+        $kunjungan->alamat_kunjungan = $request->input('asal');
+        $kunjungan->namainstansi_kunjungan = $request->input('nama_instansi');
+        $kunjungan->nohp_kunjungan = $request->input('nomor_telepon');
+        $kunjungan->tgl_kunjungan = $request->input('tanggal');
+        $kunjungan->tujuan_kunjungan = $request->input('tujuan_kunjungan');
+        $kunjungan->jumlahorang_kunjungan = $request->input('jumlah_orang');
+        $kunjungan->id_user = $user;
+        $kunjungan->save();
 
         // Redirect pengguna setelah pengguna berhasil ditambahkan
         return redirect()->route('detailpengajuan')->with('success', 'Pengajuan Berhasil Dilakukan');
@@ -57,9 +61,9 @@ class FormulirKunjunganController extends Controller
     public function edit(Request $request, $id)
     {
 
-        $pengajuan_kunjungan = FormulirKunjungan::find($id);
+        $kunjungan = FormulirKunjungan::find($id);
         // return $pengajuan_kunjungan;
-        return view('login.editformulir', compact('pengajuan_kunjungan'));
+        return view('login.editformulir', compact('kunjungan'));
     }
     public function update(Request $request, $id)
     {
@@ -74,17 +78,17 @@ class FormulirKunjunganController extends Controller
 
         ]);
 
-        $pengajuan_kunjungan = FormulirKunjungan::findOrFail($id);
-        $pengajuan_kunjungan->update([
+        $kunjungan = FormulirKunjungan::findOrFail($id);
+        $kunjungan->update([
 
 
             'nama_kunjungan' => $request->nama,
             'alamat_kunjungan' => $request->asal,
-            'nama_instansi_kunjungan' => $request->nama_instansi_kunjungan,
-            'no_hp_kunjungan' => $request->nomor_telepon,
-            'tanggal_kunjungan' => $request->tanggal,
+            'namainstansi_kunjungan' => $request->nama_instansi_kunjungan,
+            'nohp_kunjungan' => $request->nomor_telepon,
+            'tgl_kunjungan' => $request->tanggal,
             'tujuan_kunjungan' => $request->tujuan_kunjungan,
-            'jumlah_kunjungan' => $request->jumlah_orang,
+            'jumlahorang_kunjungan' => $request->jumlah_orang,
  
         ]);
 
@@ -96,8 +100,8 @@ class FormulirKunjunganController extends Controller
     }
     public function destroy(int $id)
     {
-        $pengajuan_kunjungan = FormulirKunjungan::findOrFail($id);
-        $pengajuan_kunjungan->delete();
+        $kunjungan = FormulirKunjungan::findOrFail($id);
+        $kunjungan->delete();
 
         return redirect()->back()->with('success', 'Data Berhasil Dihapus');
     }

@@ -63,47 +63,31 @@
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
+              <!-- <h6>Kevin Anderson</h6>
+              <span>Web Designer</span> -->
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="{{ route('profil') }}">
                 <i class="bi bi-person"></i>
-                <span>My Profile</span>
+                <span>Akun</span>
               </a>
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+
+
 
             <li>
               <a class="dropdown-item d-flex align-items-center" href="login">
                 <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
+                <span>Keluar</span>
               </a>
             </li>
 
@@ -121,21 +105,21 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="beranda">
+        <a class="nav-link collapsed" href="{{ route('berandalogin') }}">
           <i class="bi bi-grid"></i>
           <span>Beranda</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="kunjungan">
+        <a class="nav-link collapsed" href="{{ route('detailpengajuan') }}">
           <i class="bi bi-people-fill"></i>
           <span>Kunjungan</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link" href="tabungan">
+        <a class="nav-link" href="{{ route('tabungan') }}">
           <i class="bi bi-wallet2"></i>
           <span>Tabungan</span>
         </a>
@@ -150,7 +134,7 @@
       <h1>Tabungan</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Tabungan</a></li>
+          <li class="breadcrumb-item"><a href="{{ route('tabungan') }}">Tabungan</a></li>
           <!-- <li class="breadcrumb-item">Pages</li>
           <li class="breadcrumb-item active">Blank</li> -->
         </ol>

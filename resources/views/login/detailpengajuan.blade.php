@@ -63,47 +63,31 @@
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
+              <!-- <h6>Kevin Anderson</h6>
+              <span>Web Designer</span> -->
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="{{ route('profil') }}">
                 <i class="bi bi-person"></i>
-                <span>My Profile</span>
+                <span>Akun</span>
               </a>
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+
+
 
             <li>
               <a class="dropdown-item d-flex align-items-center" href="login">
                 <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
+                <span>Keluar</span>
               </a>
             </li>
 
@@ -121,21 +105,21 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="beranda">
+        <a class="nav-link collapsed" href="{{ route('berandalogin') }}">
           <i class="bi bi-grid"></i>
           <span>Beranda</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link " href="kunjungan">
+        <a class="nav-link " href="{{ route('detailpengajuan') }}">
           <i class="bi bi-people-fill"></i>
           <span>Kunjungan</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
+        <a class="nav-link collapsed" href="{{ route('tabungan') }}">
           <i class="bi bi-wallet2"></i>
           <span>Tabungan</span>
         </a>
@@ -150,20 +134,20 @@
       <h1>Kunjungan</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{ route('laykunjungan') }}">Kunjungan</a></li>
-          <li class="breadcrumb-item">Pangajuan</li>
+          <li class="breadcrumb-item"><a href="{{ route('detailpengajuan') }}">Kunjungan</a></li>
           <!-- <li class="breadcrumb-item active">Blank</li> -->
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
-    <div class="button-container">
+    <div class="btn btn-success mb-2">
       <a href="{{ route('formulirkunjungan') }}" class="btn btn-lg btn-primary btn-lg w-10 mt-2 mb-2">
         <i class="bi bi-plus-lg"></i>
         <span>Tambah</span>
       </a>
     </div>
 
+    
 
     <div class="col lg-6">
       <div class="card">
@@ -185,13 +169,13 @@
               @foreach($data as $item)
               <form method="POST" action="{{ route('formulirkunjungan', ['id' => $item->id]) }}">
                 <tr>
-                  <td>{{ $item->id }}</td>
+                  <td>{{ $item->id_kunjungan }}</td>
                   <td>{{ $item->nama_kunjungan }}</td>
+                  <td>{{ $item->tgl_kunjungan }}</td>
                   <td>{{ $item->tujuan_kunjungan }}</td>
-                  <td>{{ $item->tanggal_kunjungan }}</td>
                   <td>
-                    <a href="{{ url('formulirkunjungan/'.$item->id.'/edit') }}" class="btn btn-success"><i class="bi bi-pencil-fill"></i></a>
-                    <a href="{{ url('formulirkunjungan/'.$item->id.'/delete') }}" class="btn btn-danger" data-id="{{ $item->id }}" data-toggle="modal" data-target="#modal-hapus"><i class="bi bi-trash3-fill"></i></button>
+                    <a href="{{ url('formulirkunjungan/'.$item->id_kunjungan.'/edit') }}" class="btn btn-success"><i class="bi bi-pencil-fill"></i></a>
+                    <a href="{{ url('formulirkunjungan/'.$item->id_kunjungan.'/delete') }}" class="btn btn-danger" data-id="{{ $item->id }}" data-toggle="modal" data-target="#modal-hapus"><i class="bi bi-trash3-fill" onclick="return confirm('Apakah Anda Yakin Menghapus Data Ini?')"></i></button>
                   </td>
                 </tr>
                 @endforeach

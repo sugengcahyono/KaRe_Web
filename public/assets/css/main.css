@@ -21,7 +21,7 @@
 :root {
   --color-default: #0a0d13;
   --color-primary: #B99470;
-  --color-secondary: #21690F;
+  --color-secondary: #445D48;
 }
 
 /* Smooth scroll behavior */
@@ -107,7 +107,7 @@ section {
 .section-header span {
   position: absolute;
   top: 46px;
-  color: rgb(33, 105, 15);
+  color: rgb(68, 93, 72);
   left: 0;
   right: 0;
   z-index: 1;
@@ -147,7 +147,7 @@ section {
 
 .breadcrumbs .page-header:before {
   content: "";
-  background-color: rgb(33, 105, 15);
+  background-color: rgb(68, 93, 72);
   position: absolute;
   inset: 0;
 }
@@ -252,7 +252,7 @@ section {
 }
 
 .header.sticked {
-  background: rgb(33, 105, 15);
+  background: rgb(68, 93, 72);
   padding: 15px 0;
   /* box-shadow: 0px 2px 20px rgba(14, 29, 52, 0.1); */
 }
@@ -429,7 +429,7 @@ section {
     inset: 0;
     padding: 50px 0 10px 0;
     margin: 0;
-    background: rgb(33, 105, 15);
+    background: rgb(68, 93, 72);
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
@@ -485,7 +485,7 @@ section {
     padding: 10px 0;
     margin: 10px 20px;
     transition: all 0.5s ease-in-out;
-    border: 1px solid #21690F;
+    border: 1px solid #445D48;
   }
 
   .navbar .dropdown>.dropdown-active,
@@ -527,7 +527,7 @@ section {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgb(33, 105, 15);
+    background: rgb(68, 93, 72);
     z-index: 9996;
   }
 }
@@ -546,7 +546,7 @@ section {
 }
 
 .featured-services .service-item .icon i {
-  color: #21690F;
+  color: #445D48;
   font-size: 48px;
   transition: 0.3s;
 }
@@ -563,20 +563,22 @@ section {
   font-weight: 700;
   margin-bottom: 10px;
   font-size: 20px;
-  color: var(--color-secondary);
+  color: #000000;
+  /* color: var(--color-secondary); */
   transition: 0.3s;
 }
 
 .featured-services .service-item .description {
   font-size: 15px;
-  color: #21690F;
+  color: #000000;
   margin-bottom: 10px;
 }
 
 .featured-services .service-item .readmore {
   display: flex;
   align-items: center;
-  color: var(--color-secondary);
+  color: #000000;
+  /* color: var(--color-secondary); */
   transition: 0.3s;
   font-weight: 700;
   font-size: 14px;
@@ -638,7 +640,7 @@ section {
 .about .play-btn {
   width: 94px;
   height: 94px;
-  background: radial-gradient(var(--color-primary) 50%, rgb(33, 105, 15) 52%);
+  background: radial-gradient(var(--color-primary) 50%, rgb(68, 93, 72) 52%);
   border-radius: 50%;
   display: block;
   position: absolute;
@@ -717,8 +719,9 @@ section {
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
-.services .card {
-  border: 1px solid rgb(33, 105, 15);
+
+.services .card { 
+  border: 1px solid rgb(0, 0, 0);
   background: #fff;
   position: relative;
   border-radius: 0;
@@ -755,7 +758,8 @@ section {
 .services .card p {
   padding: 0 30px;
   margin-bottom: 30px;
-  color: var(--color-secondary);
+  color: #000000;
+  /* color: var(--color-secondary); */
   font-size: 15px;
 }
 
@@ -767,7 +771,7 @@ section {
 # Call To Action Section
 --------------------------------------------------------------*/
 .call-to-action {
-  background: linear-gradient(rgb(33, 105, 15), rgb(33, 105, 15)), url("../img/cta-bg.jpg") center center;
+  background: linear-gradient(rgb(68, 93, 72), rgb(68, 93, 72)), url("../img/cta-bg.jpg") center center;
   background-size: cover;
   padding: 100px 0;
 }
@@ -904,7 +908,7 @@ section {
 }
 
 .pricing ul i {
-  color: #21690F;
+  color: #445D48;
   font-size: 24px;
   padding-right: 3px;
 }
@@ -992,7 +996,7 @@ section {
   font-size: 18px;
   color: var(--color-default);
   text-align: left;
-  background: rgb(33, 105, 15);
+  background: rgb(68, 93, 72);
   border-radius: 5px;
 }
 
@@ -1023,7 +1027,7 @@ section {
 .faq .accordion-body {
   padding: 0 30px 25px 60px;
   border: 0;
-  background: rgb(33, 105, 15);
+  background: rgb(68, 93, 72);
   border-radius: 5px;
 }
 
@@ -1042,7 +1046,7 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgb(33, 105, 15);
+  background: rgb(68, 93, 72);
 }
 
 .testimonials .section-header {
@@ -1184,7 +1188,7 @@ section {
   text-align: center;
   margin-bottom: 20px;
   background: #fff;
-  border: 1px solid rgb(33, 105, 15);
+  border: 1px solid rgb(68, 93, 72);
 }
 
 .team .member img {
@@ -1220,7 +1224,7 @@ section {
 }
 
 .team .member .social a {
-  color: rgb(33, 105, 15);
+  color: rgb(68, 93, 72);
   transition: 0.3s;
 }
 
@@ -1284,7 +1288,7 @@ section {
 }
 
 .horizontal-pricing ul i {
-  color: #21690F;
+  color: #445D48;
   font-size: 24px;
   padding-right: 3px;
 }
@@ -1399,7 +1403,7 @@ section {
 .get-a-quote .php-email-form .sent-message {
   display: none;
   color: #fff;
-  background: #21690F;
+  background: #445D48;
   text-align: center;
   padding: 15px;
   margin-bottom: 24px;
@@ -1421,7 +1425,7 @@ section {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid #21690F;
+  border: 3px solid #445D48;
   border-top-color: #fff;
   animation: animate-loading 1s linear infinite;
 }
@@ -1457,7 +1461,7 @@ section {
 }
 
 .get-a-quote .php-email-form button[type=submit]:hover {
-  background: rgb(33, 105, 15);
+  background: rgb(68, 93, 72);
 }
 
 @keyframes animate-loading {
@@ -1531,7 +1535,7 @@ section {
 .contact .php-email-form .sent-message {
   display: none;
   color: #fff;
-  background: #21690F;
+  background: #445D48;
   text-align: center;
   padding: 15px;
   font-weight: 600;
@@ -1551,7 +1555,7 @@ section {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid #21690F;
+  border: 3px solid #445D48;
   border-top-color: #fff;
   animation: animate-loading 1s linear infinite;
 }
@@ -1630,9 +1634,9 @@ section {
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
-  min-height: 50vh;
+  /* min-height: 50vh; */
   background-color: var(--color-secondary);
-  background-image: url("../img/hero-bg.png");
+  /* background-image: url("../img/hero-bg.png"); */
   background-size: cover;
   background-position: center;
   position: relative;
@@ -1729,7 +1733,35 @@ section {
   font-size: 15px;
   font-weight: 600;
 }
+.img-below-text {
+  display: block;
+  margin-top: 20px; 
+  clear: both;
+}
+.row.mt-5 {
+  margin-top: 40px; 
+}
 
+.misi-list {
+  list-style-type: decimal;  }
+
+.misi-list li {
+  margin-bottom: 10px;  }
+
+  table {
+    border-collapse: collapse; 
+    width: 100%; 
+  }
+  
+  th, td {
+    padding: 8px; 
+    text-align: left; 
+    border: 1px solid #ddd; 
+  }
+  
+  th {
+    background-color: #f0f0f0; 
+  }
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/

@@ -32,11 +32,21 @@
                     <img src="assets/img/kegiatan2.jpeg" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-7">
-                    <!-- <h3>Pengumpulan Sampah</h3> -->
-                    <p class="fst-serif custom-justify">
-                        Jika masyarakat melakukan pemilahan sampah dengan baik dan benar, mereka memiliki kesempatan untuk menjual sampah yang telah dipilah kepada Tempat Pembuangan Sampah Terpadu (TPST) Kartoharjo. TPST dapat membeli sampah yang telah dipisahkan sesuai jenisnya, dan masyarakat akan menerima uang sebagai imbalan.
-                    </p>
 
+                    <!-- <div class="col-lg-6 order-last order-lg-first">
+                        <h3>Ubah Sampah Menjadi Rupiah</h3>
+                    </div> -->
+                    <p class="fst-serif custom-justify">
+                        Jika masyarakat melakukan pemilahan sampah dengan baik dan benar, mereka memiliki kesempatan untuk menjual sampah yang telah dipilah kepada Tempat Pembuangan Sampah Terpadu (TPST) Kartoharjo. TPST Kartoharjo dapat membeli sampah yang telah dipisahkan sesuai jenisnya, dan masyarakat akan menerima uang sebagai imbalan.
+                        Tertarik untuk mengikuti Layanan Tabungan Sampah di TPST Kartoharjo?
+                    </p>
+                    <p class="fst-serif custom-justify">
+                        Alternatifnya, masyarakat juga dapat memilih untuk menabung uang yang mereka terima dari penjualan sampah tersebut. Tindakan ini tidak hanya mendukung keberlanjutan pengelolaan sampah, tetapi juga memberikan insentif ekonomi kepada masyarakat untuk berpartisipasi aktif dalam praktik pemilahan sampah.
+                    </p>
+                    <a class="login-blade" href="{{ route('login') }}">
+                        <button type="submit" class="btn btn-success mb-2">
+                            Yuk Daftarkan Akunmu! <span class="badge bg-white text-success"></span>
+                        </button>
                 </div>
             </div><!-- Features Item -->
 
@@ -45,19 +55,21 @@
                     <img src="assets/img/kegiatan2.jpeg" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-7 order-2 order-md-1">
-                    <!-- <h3>Daur Ulang</h3> -->
-                    <p class="fst-serif custom-justify">
-                        Alternatifnya, masyarakat juga dapat memilih untuk menabung uang yang mereka terima dari penjualan sampah tersebut. Tindakan ini tidak hanya mendukung keberlanjutan pengelolaan sampah, tetapi juga memberikan insentif ekonomi kepada masyarakat untuk berpartisipasi aktif dalam praktik pemilahan sampah.
-                    </p>
+                    <h3>Manfaat bergabung dengan layanan tabungan sampah :</h3>
+                    <ol class="misi-list">
+                        <li>Memperoleh penghasilan tambahan dengan menjual sampah yang sudah dipilah ke TPST.</li>
+                        <li>Pengurangan pencemaran lingkungan.</li>
+                        <li>Meningkatkan kesadaran masyarakat akan pentingnya menjaga lingkungan.</li>
+                        <li>Membangun masyarakat agar hidup lebih peduli terhadap lingkungan.</li>
+                    </ol>
 
                 </div>
             </div><!-- Features Item -->
 
 
     </section><!-- End Features Section -->
-    <button type="submit" class="btn btn-primary float-left mt-3">Yuk Daftar!</button>
 
-    
+
 
 
     @endsection

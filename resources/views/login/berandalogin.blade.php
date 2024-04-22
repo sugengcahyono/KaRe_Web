@@ -45,7 +45,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <i class="bi bi-list toggle-sidebar-btn"></i>
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="{{ route('berandalogin') }}" class="logo d-flex align-items-center">
         <img src="{{ asset('assets/img/kare.png')}}" alt="">
         <span class="d-none d-lg-block">Kartoharjo Recycle</span>
       </a>
@@ -56,54 +56,38 @@
 
         <li class="nav-item dropdown pe-3">
 
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="{{ route('profil') }}" data-bs-toggle="dropdown">
             <img src="{{ asset('nice-admin/assets/img/profile-img.jpg')}}" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">Ninuu</span>
+            <span class="d-none d-md-block dropdown-toggle ps-2" href="{{ route('profil') }}">Ninuu</span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
+              <!-- <h6>Kevin Anderson</h6>
+              <span>Web Designer</span> -->
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="{{ route('profil') }}">
                 <i class="bi bi-person"></i>
-                <span>My Profile</span>
+                <span>Akun</span>
               </a>
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+
+
 
             <li>
               <a class="dropdown-item d-flex align-items-center" href="login">
                 <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
+                <span>Keluar</span>
               </a>
             </li>
 
@@ -121,21 +105,21 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link" href="beranda">
+        <a class="nav-link" href="{{ route('berandalogin') }}">
           <i class="bi bi-grid"></i>
           <span>Beranda</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="kunjungan">
+        <a class="nav-link collapsed" href="{{ route('detailpengajuan') }}">
           <i class="bi bi-people-fill"></i>
           <span>Kunjungan</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
+        <a class="nav-link collapsed" href="{{ route('tabungan') }}">
           <i class="bi bi-wallet2"></i>
           <span>Tabungan</span>
         </a>
@@ -150,7 +134,7 @@
       <h1>Beranda</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+          <li class="breadcrumb-item"><a href="{{ route('berandalogin') }}">Beranda</a></li>
           <!-- <li class="breadcrumb-item">Pages</li>
           <li class="breadcrumb-item active">Blank</li> -->
         </ol>
@@ -163,7 +147,7 @@
           <div class="card info-card sales-card">
 
             <div class="card-body">
-              <h5 class="card-title"><a href="{{ route('tabungan') }}">Tabungan</a></h5>
+              <h5 class="card-title"><a href="">Tabungan</a></h5>
 
               <div class="d-flex align-items-center">
                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -181,11 +165,11 @@
           <div class="card info-card sales-card">
 
             <div class="card-body">
-              <h5 class="card-title"><a href="{{ route('tabungan') }}">Sampah</a></h5>
+              <h5 class="card-title"><a href="">Sampah</a></h5>
 
               <div class="d-flex align-items-center">
                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                <i class="bi bi-trash"></i>
+                  <i class="bi bi-trash"></i>
                 </div>
                 <div class="ps-3">
                   <h6>145 Kg</h6>

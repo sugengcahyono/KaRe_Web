@@ -5,50 +5,13 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="hero d-flex align-items-center">
   <div class="container">
-    <div class="row gy-4 d-flex justify-content-between"> 
+    <div class="row gy-4 d-flex justify-content-between">
       <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-        <h2 data-aos="fade-up"></h2>
-        <p data-aos="fade-up" data-aos-delay="100" class="custom-justify">TPST Kartoharjo berada di bawah naungan Dinas Lingkungan Hidup (DLH) Kabupaten Nganjuk merupakan fasilitas pengelolaan sampah pemerintah daerah. TPST ini melibatkan pemilahan dan pengelolaan sampah sesuai standar lingkungan. DLH mengawasi operasional TPST, memastikan kepatuhan regulasi, dan terlibat dalam pendidikan lingkungan.</p>
-
-
-        <div class="row gy-4" data-aos="fade-up" data-aos-delay="400">
-
-          <div class="col-lg-3 col-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Sampah Dikumpulkan tes dicoba</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Sampah Dimanfaatkan</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Sampah Didaur Ulang</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Residu</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-        </div>
       </div>
-
-      <div class="col-lg-5 order-1 order-lg-2" data-aos="zoom-out">
-
-      </div>
-
     </div>
+    <div class="col-lg-5 order-1 order-lg-2" data-aos="zoom-out">
+    </div>
+  </div>
   </div>
 </section><!-- End Hero Section -->
 
@@ -77,33 +40,17 @@
           <!-- <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"></a> -->
         </div>
         <div class="col-lg-6 content order-last  order-lg-first">
-          <h3>Struktur Organisasi</h3>
-          <p>
-            Tempat pengelolaan sampah terpadu (TPST) Kartoharjo mulai beroperasi pada tanggal LUPA WKWK tahun 2016. TPST ini dikelola oleh bapak-ibu pekerja sapu jalanan?
+          <h3>Apa itu Kartoharjo Recycle?</h3>
+          <p class="custom-justify">
+            Kartoharjo Recycle hadir sebagai platform digital inovatif untuk memudahkan pengelolaan serta pengaksesan informasi yang dimiliki oleh Tempat Pengelolaan Sampah Terpadu (TPST) Kartoharjo. Terdiri dari aplikasi mobile khusus admin dan website yang mudah diakses umum oleh pengguna.
           </p>
-          <ul>
-            <li data-aos="fade-up" data-aos-delay="100">
-              <i class="bi bi-diagram-3"></i>
-              <div>
-                <h5>Ullamco laboris nisi ut aliquip consequat</h5>
-                <p>Magni facilis facilis repellendus cum excepturi quaerat praesentium libre trade</p>
-              </div>
-            </li>
-            <li data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-fullscreen-exit"></i>
-              <div>
-                <h5>Magnam soluta odio exercitationem reprehenderi</h5>
-                <p>Quo totam dolorum at pariatur aut distinctio dolorum laudantium illo direna pasata redi</p>
-              </div>
-            </li>
-            <li data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-broadcast"></i>
-              <div>
-                <h5>Voluptatem et qui exercitationem</h5>
-                <p>Et velit et eos maiores est tempora et quos dolorem autem tempora incidunt maxime veniam</p>
-              </div>
-            </li>
-          </ul>
+          <p class="custom-justify">
+            Aplikasi Mobile Kartoharjo Recycle memungkinkan admin untuk data sampah yang tekumpul, mengelola tabungan sampah milik nasabah, melakukan konfirmasi kunjungan, melakukan update kegiatan serta penjualan pupuk. Di sisi lain, Website Kartoharjo Recycle memberikan informasi mengenai penjualan pupuk serta penjemputan sampaha, kegiatan yang terselenggarakan, melihat data saldo tabungan sampah yang terkumpul dari hasil menabung sampah, melakukan pengajuan kunjungan.
+          </p>
+          <p class="custom-justify">
+            Dengan terintegrasinya kedua platform tersebut, menjadi sebuah solusi terpadu untuk meningkatkan partisipasi masyarakat dalam daur ulang sampah seta mewujudkan lingkungan yang bersih dan berkelanjutan di Kelurahan Kartoharjo
+          </p>
+
         </div>
       </div>
 
@@ -125,8 +72,9 @@
             <div class="card-img">
               <img src="assets/img/kegiatan3.jpeg" alt="" class="img-fluid">
             </div>
-            <h3><a href="{{ route('layanansampah') }}" class="stretched-link ">Layanan Sampah</a></h3>
-            <p class="custom-justify">Program layanan sampah memiliki 2 sub layanan yaitu layanan penjemputan sampah serta pembelian pupuk</p>
+            <h3><a href="{{ route('layanansampah') }}" class="stretched-link ">Layanan Pengelolaan Sampah</a></h3>
+            <p class="custom-justify">Layanan pengelolaan sampah memiliki 2 sub layanan yaitu layanan penjemputan sampah serta layanan pembelian pupuk.</p>
+
           </div>
         </div><!-- End Card Item -->
 
@@ -136,7 +84,7 @@
               <img src="assets/img/kegiatan3.jpeg" alt="" class="img-fluid">
             </div>
             <h3><a href="{{ route('layanankunjungan') }}" class="stretched-link">Layanan Kunjungan</a></h3>
-            <p class="custom-justify">Program pengajuan kunjungan merupakan layanan yang dapat digunakan oleh pengguna untuk melakukan pengajuan kunjungan sebelum datang ke TPST</p>
+            <p class="custom-justify">Layanan kunjungan merupakan program yang dapat digunakan oleh pengguna untuk melakukan pengajuan kunjungan sebelum datang ke TPST Kartoharjo.</p>
           </div>
         </div><!-- End Card Item -->
 
@@ -146,7 +94,9 @@
               <img src="assets/img/kegiatan3.jpeg" alt="" class="img-fluid">
             </div>
             <h3><a href="{{ route('layanantabungan') }}" class="stretched-link">Layanan Tabungan</a></h3>
-            <p class="custom-justify">Program tabungan sampah merupakan kegiatan menabung sampah yang sudah dipilah sesuai jenisnya. Sampah yang ditabung akan ditimbang, dan hasil penimbangan akan dikonversikan ke dalam rupiah sesuai dengan harga sampah saat penimbangan</p>
+            <p class="custom-justify">
+              Layanan tabungan sampah merupakan kegiatan menabung sampah yang sudah dipilah sesuai jenisnya, sampah yang ditabung akan ditimbang, dan hasil penimbangan akan dikonversikan ke dalam rupiah.
+            </p>
 
           </div>
         </div><!-- End Card Item -->
@@ -156,20 +106,7 @@
     </div>
   </section><!-- End Services Section -->
 
-  <!-- ======= Call To Action Section ======= -->
-  <!-- <section id="call-to-action" class="call-to-action">
-    <div class="container" data-aos="zoom-out">
-
-      <div class="row justify-content-center">
-        <div class="col-lg-4 text-center">
-          <h3>VISI</h3>
-          <p>Kebersihan Kunci Keindahan Bersama</p> -->
-  <!-- <a class="cta-btn" href="#">Call To Action</a> -->
-  <!-- </div>
-      </div>
-
-    </div> -->
-  </section><!-- End Call To Action Section -->
+  
   <!-- ======= Features Section ======= -->
 
   <div class="section-header">

@@ -8,17 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class Produk extends Model
 {
     use HasFactory;
-    protected $table = 'produk'; 
+    public $timestamps = true;
+    protected $table = 'produk';
+    protected $primaryKey = 'id_produk';
+
     protected $fillable = [
-        'id_produk',
         'nama_produk',
         'foto_produk',
         'harga_produk',
         'deskripsi_produk',
         'stok_produk',
-        
+
 
     ];
-
-    public $timestamps = true;
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user');
+    }
 }

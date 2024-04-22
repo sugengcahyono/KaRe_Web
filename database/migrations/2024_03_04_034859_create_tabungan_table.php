@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('tabungan', function (Blueprint $table) {
             $table->id('id_tabungan');
-            $table->date('tanggal_tabungan')->nullable(false);
-            $table->string('keterangansampah_tabungan', 100)->nullable(false);
-            $table->integer('beratsampah_tabungan', 11)->nullable(false);
+            $table->date('tgl_tabungan')->nullable(false);
+            $table->string('ketsampah_tabungan', 100)->nullable(false);
+            $table->integer('beratsampah_tabungan')->nullable(false);
             $table->enum('tipe_tabungan', ['masuk', 'keluar'])->nullable(false);
-            $table->integer('hargasampah_tabungan',11)->nullable(false);
-            $table->integer('saldoakhir_tabungan',11)->nullable(false);
+            $table->integer('hargasampah_tabungan')->nullable(false);
+            $table->integer('saldoakhir_tabungan')->nullable(false);
             $table->timestamps();
             
             $table->unsignedBigInteger('id_user');

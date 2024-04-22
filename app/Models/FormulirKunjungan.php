@@ -8,9 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class FormulirKunjungan extends Model
 {
-    protected $table = 'pengajuan_kunjungan'; 
+    public $timestamps = true;
+    protected $table = 'kunjungan';
+    protected $primaryKey = 'id_kunjungan';
+
     protected $fillable = [
-        'id_kunjungan',
         'nama_kunjungan',
         'alamat_kunjungan',
         'nama_instansi_kunjungan',
@@ -22,6 +24,9 @@ class FormulirKunjungan extends Model
         'alasan_status_kunjungan',
 
     ];
-
-    public $timestamps = true;
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_user');
+    }
 }

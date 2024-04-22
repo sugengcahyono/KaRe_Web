@@ -11,17 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pengajuan_kunjungan', function (Blueprint $table) {
+        Schema::create('kunjungan', function (Blueprint $table) {
             $table->id('id_kunjungan');
             $table->string('nama_kunjungan', 100)->nullable(false);
             $table->string('alamat_kunjungan', 300)->nullable(false);
-            $table->date('tanggal_kunjungan')->nullable(false);
-            $table->string('nama_instansi_kunjungan', 100)->nullable(false);
-            $table->string('no_hp_kunjungan', 15)->nullable(false);
+            $table->date('tgl_kunjungan')->nullable(false);
+            $table->string('namainstansi_kunjungan', 100)->nullable(false);
+            $table->string('nohp_kunjungan', 15)->nullable(false);
             $table->string('tujuan_kunjungan', 500)->nullable(false);
             $table->enum('status_kunjungan', ['diajukan', 'diterima', 'ditolak'])->nullable(false);
             $table->integer('jumlah_kunjungan')->nullable(false);
-            $table->string('alasan_status_kunjungan', 300)->nullable(true);
+            $table->string('alasanstatus_kunjungan', 300)->nullable(true);
             $table->timestamps();
             
             $table->unsignedBigInteger('id_user');

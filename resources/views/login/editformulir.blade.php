@@ -68,47 +68,31 @@
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
+              <!-- <h6>Kevin Anderson</h6>
+              <span>Web Designer</span> -->
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="{{ route('profil') }}">
                 <i class="bi bi-person"></i>
-                <span>My Profile</span>
+                <span>Akun</span>
               </a>
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+
+
 
             <li>
               <a class="dropdown-item d-flex align-items-center" href="#">
                 <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
+                <span>Keluar</span>
               </a>
             </li>
 
@@ -177,48 +161,48 @@
                 <h5 class="card-title">Formulir Pengajuan Kunjungan</h5>
 
                 <!-- Elemen Formulir Umum -->
-                <form action="{{ route('update', ['id' => $pengajuan_kunjungan->id]) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('update', ['id' => $kunjungan->id]) }}" method="POST" enctype="multipart/form-data">
                   @csrf
                   @method('PUT')
 
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama" value="{{ $pengajuan_kunjungan->nama_kunjungan }}">
+                      <input type="text" class="form-control" name="nama" value="{{ $kunjungan->nama_kunjungan }}">
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="inputEmail" class="col-sm-2 col-form-label">Asal</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="asal" value="{{ $pengajuan_kunjungan->alamat_kunjungan }}">
+                      <input type="text" class="form-control" name="asal" value="{{ $kunjungan->alamat_kunjungan }}">
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="inputEmail" class="col-sm-2 col-form-label">Nama Instansi</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nama_instansi_kunjungan" value="{{ $pengajuan_kunjungan->nama_instansi_kunjungan }}">
+                      <input type="text" class="form-control" name="nama instansi kunjungan" value="{{ $kunjungan->nama_instansi_kunjungan }}">
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="inputNumber" class="col-sm-2 col-form-label">Nomor Telepon</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nomor_telepon" value="{{ $pengajuan_kunjungan->no_hp_kunjungan }}">
+                      <input type="text" class="form-control" name="nomor telepon" value="{{ $kunjungan->nohp_kunjungan }}">
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="inputDate" class="col-sm-2 col-form-label">Tanggal</label>
                     <div class="col-sm-10">
-                      <input type="date" class="form-control" name="tanggal" value="{{ $pengajuan_kunjungan->tanggal_kunjungan }}">
+                      <input type="date" class="form-control" name="tanggal" value="{{ $kunjungan->tgl_kunjungan }}">
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="inputPassword" class="col-sm-2 col-form-label">Tujuan Kunjungan</label>
                     <div class="col-sm-10">
-                      <textarea class="form-control" style="height: 100px" name="tujuan_kunjungan" value="{{ $pengajuan_kunjungan->tujuan_kunjungan }}"></textarea>
+                      <textarea class="form-control" style="height: 100px" name="tujuan kunjungan" value="{{ $kunjungan->tujuan_kunjungan }}"></textarea>
                     </div>
                   </div>
 
@@ -235,7 +219,7 @@
                   <div class="row mb-3">
                     <label for="inputEmail" class="col-sm-2 col-form-label">Jumlah Orang</label>
                     <div class="col-sm-10">
-                      <input type="number" class="form-control" name="jumlah_orang" value="{{ $pengajuan_kunjungan->jumlah_kunjungan }}">
+                      <input type="number" class="form-control" name="jumlah orang" value="{{ $kunjungan->jumlahorang_kunjungan }}">
                     </div>
                   </div>
 
