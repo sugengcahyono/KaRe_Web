@@ -16,6 +16,7 @@ class Kegiatan extends Model
         'nama_kegiatan',
         'foto_kegiatan',
         'deskripsi_kegiatan',
+        'id_user',
         
 
     ];
