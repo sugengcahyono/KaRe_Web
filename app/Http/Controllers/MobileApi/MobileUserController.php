@@ -200,4 +200,44 @@ class MobileUserController extends Controller
         // Tampilkan respons JSON
         return response()->json($response);
     }
+
+
+    public function get_DataAdmin()
+    {
+        try {
+            // Ambil data admin dengan kriteria level_user 'admin'
+            $admins = User::where('level_user', 'admin')->get(['nama_user', 'email_user']);
+
+            // Buat respons JSON
+            $response = ['status' => 'success', 'admins' => $admins];
+
+            return response()->json($response);
+        } catch (\Exception $e) {
+            // Jika terjadi kesalahan
+            $response = ['status' => 'error', 'message' => $e->getMessage()];
+
+            return response()->json($response, 500);
+        }
+    }
+
+
+    public function get_AnggotaTabungan()
+    {
+        try {
+            // Ambil data admin dan user dengan kriteria level_user 'admin' atau 'user', diurutkan berdasarkan nama_user
+            $users = User::whereIn('level_user', ['admin', 'user'])
+                         ->orderBy('nama_user')
+                         ->get(['nama_user', 'email_user', 'level_user']);
+
+            // Buat respons JSON
+            $response = ['status' => 'success', 'users' => $users];
+
+            return response()->json($response);
+        } catch (\Exception $e) {
+            // Jika terjadi kesalahan
+            $response = ['status' => 'error', 'message' => $e->getMessage()];
+
+            return response()->json($response, 500);
+        }
+    }
 }

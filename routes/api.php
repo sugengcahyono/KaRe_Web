@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginMobileController;
 use App\Http\Controllers\MobileAPI\MobileUserController;
 use App\Http\Controllers\MobileAPI\MobileKegiatanController;
+use App\Http\Controllers\MobileAPI\MobileProdukController;
 
 
 use Illuminate\Http\Request;
@@ -25,13 +26,26 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => '/apimobilekare'], function()
 {
+    //USER
     Route::post('/login', [MobileUserController::class, 'login']);
     Route::post('/TambahAnggota', [MobileUserController::class, 'addUser']);
     Route::post('/TambahAdmin', [MobileUserController::class, 'addAdmin']);
+    Route::get('/get_DataAdmin', [MobileUserController::class, 'get_DataAdmin']);
+    Route::get('/get_AnggotaTabungan', [MobileUserController::class, 'get_AnggotaTabungan']);
+
+    //KEGIATAN
     Route::post('/UploadKegiatan', [MobileKegiatanController::class, 'UploadKegiatan']);
     Route::get('/getKegiatan', [MobileKegiatanController::class, 'getAllKegiatan']);
-    Route::get('/getDetailKegiatan', [MobileKegiatanController::class, 'getDetailKegiatan']);
-    // Route::post('/uploadKegiatan/store', [ProductController::class, 'getDetailKegiatan']);
+    Route::post('/getDetailKegiatan', [MobileKegiatanController::class, 'getDetailKegiatan']);
+    Route::post('/updateKegiatan', [MobileKegiatanController::class, 'updateKegiatan']);
+    Route::post('/DeleteKegiatan', [MobileKegiatanController::class, 'DeleteKegiatan']);
+
+    //PRODUK
+    Route::get('/getAllProduk', [MobileProdukController::class, 'getAllProduk']);
+    Route::post('/UploadProduk', [MobileProdukController::class, 'UploadProduk']);
+    Route::post('/getDetailPupuk', [MobileProdukController::class, 'getDetailPupuk']);
+    Route::post('/updateProduk', [MobileProdukController::class, 'updateProduk']);
+    // Route::post('/uploadKegiatan/store', [ProductController::class, 'updateProduk']);
     // Route::put('/product/{id}', [ProductController::class, 'updateProduct']);
     // Route::get('/delproduct/{id}', [ProductController::class, 'destroyProduct']);
 });
