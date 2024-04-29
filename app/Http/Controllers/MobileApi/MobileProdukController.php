@@ -185,5 +185,41 @@ class MobileProdukController extends Controller
         }
     }
     
+    public function DeleteProduk(Request $request)
+{
+    // Validasi request
+    $validator = Validator::make($request->all(), [
+        'id_produk' => 'required|integer'
+    ]);
+
+    // Jika validasi gagal
+    if ($validator->fails()) {
+        return response()->json([
+            'status' => 'error',
+            'message' => 'Invalid input data',
+            'errors' => $validator->errors()
+        ], 400);
+    }
+
+    // Ambil ID produk dari request
+    $idProduk = $request->input('id_produk');
+
+    try {
+        // Hapus produk berdasarkan ID
+        Produk::where('id_produk', $idProduk)->delete();
+
+        // Jika berhasil dihapus
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Pupuk berhasil dihapus.'
+        ], 200);
+    } catch (\Exception $e) {
+        // Jika terjadi kesalahan
+        return response()->json([
+            'status' => 'error',
+            'message' => 'Gagal menghapus pupuk: ' . $e->getMessage()
+        ], 500);
+    }
+}
 
 }

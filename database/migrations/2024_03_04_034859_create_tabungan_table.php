@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('id_tabungan');
             $table->date('tgl_tabungan')->nullable(false);
             $table->string('ketsampah_tabungan', 100)->nullable(false);
-            $table->integer('beratsampah_tabungan')->nullable(false);
+            $table->float('beratsampah_tabungan')->nullable(false);
             $table->enum('tipe_tabungan', ['masuk', 'keluar'])->nullable(false);
             $table->integer('hargasampah_tabungan')->nullable(false);
             $table->integer('saldoakhir_tabungan')->nullable(false);

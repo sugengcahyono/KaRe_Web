@@ -240,4 +240,199 @@ class MobileUserController extends Controller
             return response()->json($response, 500);
         }
     }
+
+    public function getUserDetail(Request $request)
+{
+    try {
+        // Periksa apakah request memiliki id_user
+        if ($request->has('id_user')) {
+            // Dapatkan id_user dari request
+            $id_user = $request->id_user;
+
+            // Cari pengguna berdasarkan id_user
+            $user = User::find($id_user);
+
+            // Jika pengguna ditemukan
+            if ($user) {
+                // Buat respons JSON dengan detail pengguna
+                $response = [
+                    'status' => 'success',
+                    'data' => $user
+                ];
+            } else {
+                // Jika pengguna tidak ditemukan, kirim pesan kegagalan dalam respons JSON
+                $response = [
+                    'status' => 'error',
+                    'message' => 'Pengguna tidak ditemukan'
+                ];
+            }
+        } else {
+            // Jika request tidak memiliki id_user, kirim pesan kegagalan dalam respons JSON
+            $response = [
+                'status' => 'error',
+                'message' => 'ID Pengguna tidak diberikan'
+            ];
+        }
+
+        // Kembalikan respons JSON
+        return response()->json($response);
+    } catch (\Exception $e) {
+        // Tangkap kesalahan dan kirim pesan kesalahan dalam respons JSON
+        $response = [
+            'status' => 'error',
+            'message' => 'Gagal mendapatkan detail pengguna: ' . $e->getMessage()
+        ];
+        return response()->json($response, 500);
+    }
 }
+
+
+public function updatePhoto(Request $request)
+{
+    // Validasi request
+    $request->validate([
+        'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+    ]);
+
+    if ($request->file('photo')->isValid()) {
+        $uploadedPhotoPath = $request->file('photo')->store('photos', 'public');
+        // Simpan path foto di database atau storage sesuai kebutuhan aplikasi
+        return response()->json(['message' => 'Photo uploaded successfully', 'path' => $uploadedPhotoPath]);
+    }
+
+    return response()->json(['message' => 'Invalid photo'], 400);
+}
+
+public function updateUser(Request $request)
+    {
+        // Validasi input
+        $validator = Validator::make($request->all(), [
+            'id_user' => 'required|integer',
+            'nama_user' => 'nullable|string',
+            'email_user' => 'nullable|email',
+            'notelp_user' => 'nullable|string',
+            'alamat_user' => 'nullable|string',
+            'foto_user' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10240', // Pastikan foto adalah file gambar dengan format yang valid dan ukuran maksimum 10MB
+        ]);
+
+        // Jika validasi gagal
+        if ($validator->fails()) {
+            return response()->json(['status' => 'error', 'message' => $validator->errors()->first()], 400);
+        }
+
+        // Cari pengguna berdasarkan id
+        $user = User::find($request->id_user);
+
+        // Jika pengguna tidak ditemukan
+        if (!$user) {
+            return response()->json(['status' => 'error', 'message' => 'Pengguna tidak ditemukan'], 404);
+        }
+
+        // Perbarui data pengguna
+        if ($request->has('nama_user')) {
+            $user->nama_user = $request->nama_user;
+        }
+        if ($request->has('email_user')) {
+            $user->email_user = $request->email_user;
+        }
+        if ($request->has('notelp_user')) {
+            $user->notelp_user = $request->notelp_user;
+        }
+        if ($request->has('alamat_user')) {
+            $user->alamat_user = $request->alamat_user;
+        }
+        if ($request->hasFile('foto_user')) {
+            $foto_user = $request->file('foto_user');
+            $namaFile = uniqid() . '_' . $foto_user->getClientOriginalName();
+            $foto_user->move(public_path('Images/Foto'), $namaFile);
+            $user->foto_user = $namaFile;
+        }
+
+        // Simpan perubahan
+        $user->save();
+
+        // Beri respons berhasil
+        return response()->json(['status' => 'success', 'message' => 'Data pengguna berhasil diperbarui'], 200);
+    }
+
+
+    public function changePassword(Request $request)
+{
+    $validator = Validator::make($request->all(), [
+        'id_user' => 'required|exists:user,id_user',
+        'old_password' => 'required',
+        'new_password' => 'required|min:6',
+    ]);
+
+    if ($validator->fails()) {
+        return response()->json(['success' => false, 'message' => $validator->errors()->first()]);
+    }
+
+    $user = User::find($request->id_user);
+
+    if (!$user) {
+        return response()->json(['success' => false, 'message' => 'User not found']);
+    }
+
+    if (!Hash::check($request->old_password, $user->password_user)) {
+        return response()->json(['success' => false, 'message' => 'Password lama salah']);
+    }
+
+    $user->password_user = bcrypt($request->new_password);
+    $user->save();
+
+    return response()->json(['success' => true, 'message' => 'Password berhasil diubah']);
+}
+
+public function deleteAccount(Request $request)
+{
+    // Validasi request
+    $validator = Validator::make($request->all(), [
+        'id_user' => 'required|exists:user,id_user',
+    ]);
+
+    // Jika validasi gagal
+    if ($validator->fails()) {
+        return response()->json([
+            'status' => 'error',
+            'message' => 'Invalid input data',
+            'errors' => $validator->errors()
+        ], 400);
+    }
+
+    // Ambil id_user dari request
+    $id_user = $request->input('id_user');
+
+    try {
+        // Hapus pengguna berdasarkan id_user
+        $deleted = User::where('id_user', $id_user)->delete();
+
+        // Jika berhasil dihapus
+        if ($deleted) {
+            return response()->json([
+                'status' => 'success',
+                'message' => 'User berhasil dihapus.'
+            ], 200);
+        } else {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Gagal menghapus user.'
+            ], 500);
+        }
+    } catch (\Exception $e) {
+        // Jika terjadi kesalahan
+        return response()->json([
+            'status' => 'error',
+            'message' => 'Gagal menghapus user: ' . $e->getMessage()
+        ], 500);
+    }
+}
+
+
+
+
+
+
+}
+
+

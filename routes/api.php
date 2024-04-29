@@ -32,6 +32,12 @@ Route::group(['prefix' => '/apimobilekare'], function()
     Route::post('/TambahAdmin', [MobileUserController::class, 'addAdmin']);
     Route::get('/get_DataAdmin', [MobileUserController::class, 'get_DataAdmin']);
     Route::get('/get_AnggotaTabungan', [MobileUserController::class, 'get_AnggotaTabungan']);
+    Route::post('/getUserDetail', [MobileUserController::class, 'getUserDetail']);
+    Route::post('/updatePhoto', [MobileUserController::class, 'updatePhoto']);
+    Route::post('/updateUser', [MobileUserController::class, 'updateUser']);
+    Route::post('/changePassword', [MobileUserController::class, 'changePassword']);
+    Route::post('/deleteAccount', [MobileUserController::class, 'deleteAccount']);
+
 
     //KEGIATAN
     Route::post('/UploadKegiatan', [MobileKegiatanController::class, 'UploadKegiatan']);
@@ -45,7 +51,8 @@ Route::group(['prefix' => '/apimobilekare'], function()
     Route::post('/UploadProduk', [MobileProdukController::class, 'UploadProduk']);
     Route::post('/getDetailPupuk', [MobileProdukController::class, 'getDetailPupuk']);
     Route::post('/updateProduk', [MobileProdukController::class, 'updateProduk']);
-    // Route::post('/uploadKegiatan/store', [ProductController::class, 'updateProduk']);
+    Route::post('/DeleteProduk', [MobileProdukController::class, 'DeleteProduk']);
+    // Route::post('/uploadKegiatan/store', [ProductController::class, 'deleteAccount']);
     // Route::put('/product/{id}', [ProductController::class, 'updateProduct']);
     // Route::get('/delproduct/{id}', [ProductController::class, 'destroyProduct']);
 });
