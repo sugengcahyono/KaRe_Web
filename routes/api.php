@@ -4,6 +4,9 @@ use App\Http\Controllers\LoginMobileController;
 use App\Http\Controllers\MobileAPI\MobileUserController;
 use App\Http\Controllers\MobileAPI\MobileKegiatanController;
 use App\Http\Controllers\MobileAPI\MobileProdukController;
+use App\Http\Controllers\MobileAPI\MobileTabunganController;
+
+use App\Http\Controllers\OtpController;
 
 
 use Illuminate\Http\Request;
@@ -24,8 +27,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('/send-otp', [OtpController::class, 'sendOtp']);
+
 Route::group(['prefix' => '/apimobilekare'], function()
 {
+
+    Route::post('/send-otp', [OtpController::class, 'sendOtp']); 
+
     //USER
     Route::post('/login', [MobileUserController::class, 'login']);
     Route::post('/TambahAnggota', [MobileUserController::class, 'addUser']);
@@ -52,7 +60,10 @@ Route::group(['prefix' => '/apimobilekare'], function()
     Route::post('/getDetailPupuk', [MobileProdukController::class, 'getDetailPupuk']);
     Route::post('/updateProduk', [MobileProdukController::class, 'updateProduk']);
     Route::post('/DeleteProduk', [MobileProdukController::class, 'DeleteProduk']);
-    // Route::post('/uploadKegiatan/store', [ProductController::class, 'deleteAccount']);
+
+    //TABUNGAN 
+    Route::post('/getDataTabungan', [MobileTabunganController::class, 'getDataTabungan']);
+    // Route::post('/uploadKegiatan/store', [ProductController::class, 'getDataTabungan']);
     // Route::put('/product/{id}', [ProductController::class, 'updateProduct']);
     // Route::get('/delproduct/{id}', [ProductController::class, 'destroyProduct']);
 });

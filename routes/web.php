@@ -27,6 +27,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TentangKamiController;
 use App\Http\Controllers\PembelianPupukController;
 use App\Http\Controllers\PenjemputanSampahController;
+use App\Http\Controllers\OtpController;
 
 
 
@@ -54,6 +55,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/send-otp', [OtpController::class, 'sendOtp']);
 
 Route::get('/kegiatan', [KegiatanController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
