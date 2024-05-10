@@ -52,4 +52,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    public function Tabungan()
+    {
+        return $this->hasMany(Tabungan::class, 'id_user');
+    }
 }

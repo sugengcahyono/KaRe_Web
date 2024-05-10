@@ -15,13 +15,13 @@ class FormulirKunjungan extends Model
     protected $fillable = [
         'nama_kunjungan',
         'alamat_kunjungan',
-        'nama_instansi_kunjungan',
-        'no_hp_kunjungan',
+        'namainstansi_kunjungan',
+        'nohp_kunjungan',
         'tanggal_kunjungan',
         'tujuan_kunjungan',
         'status_kunjungan',
         'jumlah_kunjungan',
-        'alasan_status_kunjungan',
+        'alasanstatus_kunjungan',
 
     ];
     

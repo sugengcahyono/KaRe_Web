@@ -31,7 +31,8 @@ class MobileProdukController extends Controller
         $validator = Validator::make($request->all(), [
             'nama_produk' => 'required',
             'deskripsi_produk' => 'required',
-            'foto_produk' => 'required|image|mimes:jpeg,png,jpg,gif|max:10240', // Pastikan foto adalah file gambar dengan format yang valid dan ukuran maksimum 10MB
+            'foto_produk' => 'required|image|mimes:jpeg,png,jpg,gif',
+            // 'foto_produk' => 'required|image|mimes:jpeg,png,jpg,gif|max:10240', // Pastikan foto adalah file gambar dengan format yang valid dan ukuran maksimum 10MB
             'harga_produk' => 'required|numeric',
             'stok_produk' => 'required|integer',
             'id_user' => 'required|integer', // Pastikan id_user adalah bilangan bulat

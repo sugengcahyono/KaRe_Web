@@ -15,7 +15,8 @@ class MobileKegiatanController extends Controller
         $validator = Validator::make($request->all(), [
             'nama_kegiatan' => 'required',
             'deskripsi_kegiatan' => 'required',
-            'foto_kegiatan' => 'required|image|mimes:jpeg,png,jpg,gif|max:10240', // Pastikan foto adalah file gambar dengan format yang valid dan ukuran maksimum 2MB
+            // 'foto_kegiatan' => 'required|image|mimes:jpeg,png,jpg,gif|max:10240', // Pastikan foto adalah file gambar dengan format yang valid dan ukuran maksimum 2MB
+            'foto_kegiatan' => 'required|image|mimes:jpeg,png,jpg,gif',
             'id_user' => 'required|integer', // Pastikan id_user adalah bilangan bulat
         ]);
 

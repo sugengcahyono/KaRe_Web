@@ -220,26 +220,45 @@ class MobileUserController extends Controller
         }
     }
 
+    public function get_DataUser()
+{
+    try {
+        // Ambil data pengguna dengan kriteria level_user 'user'
+        $users = User::where('level_user', 'user')->get(['nama_user', 'email_user', 'alamat_user']);
+
+        // Buat respons JSON
+        $response = ['status' => 'success', 'users' => $users];
+
+        return response()->json($response);
+    } catch (\Exception $e) {
+        // Jika terjadi kesalahan
+        $response = ['status' => 'error', 'message' => $e->getMessage()];
+
+        return response()->json($response, 500);
+    }
+}
+
+
 
     public function get_AnggotaTabungan()
-    {
-        try {
-            // Ambil data admin dan user dengan kriteria level_user 'admin' atau 'user', diurutkan berdasarkan nama_user
-            $users = User::whereIn('level_user', ['admin', 'user'])
-                         ->orderBy('nama_user')
-                         ->get(['nama_user', 'email_user', 'level_user']);
+{
+    try {
+        // Ambil semua data anggota tabungan tanpa kriteria
+        $users = User::orderBy('nama_user')->get();
 
-            // Buat respons JSON
-            $response = ['status' => 'success', 'users' => $users];
+        // Buat respons JSON
+        $response = ['status' => 'success', 'users' => $users];
 
-            return response()->json($response);
-        } catch (\Exception $e) {
-            // Jika terjadi kesalahan
-            $response = ['status' => 'error', 'message' => $e->getMessage()];
+        return response()->json($response);
+    } catch (\Exception $e) {
+        // Jika terjadi kesalahan
+        $response = ['status' => 'error', 'message' => $e->getMessage()];
 
-            return response()->json($response, 500);
-        }
+        return response()->json($response, 500);
     }
+}
+
+
 
     public function getUserDetail(Request $request)
 {

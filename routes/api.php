@@ -5,6 +5,7 @@ use App\Http\Controllers\MobileAPI\MobileUserController;
 use App\Http\Controllers\MobileAPI\MobileKegiatanController;
 use App\Http\Controllers\MobileAPI\MobileProdukController;
 use App\Http\Controllers\MobileAPI\MobileTabunganController;
+use App\Http\Controllers\MobileAPI\MobileKunjunganController;
 
 use App\Http\Controllers\OtpController;
 
@@ -33,18 +34,24 @@ Route::group(['prefix' => '/apimobilekare'], function()
 {
 
     Route::post('/send-otp', [OtpController::class, 'sendOtp']); 
+    Route::post('/checkEmail', [OtpController::class, 'checkEmail']); 
+    Route::post('/lupapassword', [OtpController::class, 'updatePassword']); 
+    Route::post('/verifyOtp', [OtpController::class, 'verifyOtp']);
+ 
 
     //USER
     Route::post('/login', [MobileUserController::class, 'login']);
     Route::post('/TambahAnggota', [MobileUserController::class, 'addUser']);
     Route::post('/TambahAdmin', [MobileUserController::class, 'addAdmin']);
     Route::get('/get_DataAdmin', [MobileUserController::class, 'get_DataAdmin']);
+    Route::get('/get_DataUser', [MobileUserController::class, 'get_DataUser']);
     Route::get('/get_AnggotaTabungan', [MobileUserController::class, 'get_AnggotaTabungan']);
     Route::post('/getUserDetail', [MobileUserController::class, 'getUserDetail']);
     Route::post('/updatePhoto', [MobileUserController::class, 'updatePhoto']);
     Route::post('/updateUser', [MobileUserController::class, 'updateUser']);
     Route::post('/changePassword', [MobileUserController::class, 'changePassword']);
     Route::post('/deleteAccount', [MobileUserController::class, 'deleteAccount']);
+    
 
 
     //KEGIATAN
@@ -63,7 +70,21 @@ Route::group(['prefix' => '/apimobilekare'], function()
 
     //TABUNGAN 
     Route::post('/getDataTabungan', [MobileTabunganController::class, 'getDataTabungan']);
-    // Route::post('/uploadKegiatan/store', [ProductController::class, 'getDataTabungan']);
+    Route::post('/tambahTabungan', [MobileTabunganController::class, 'tambahTabungan']);
+    Route::post('/getRiwayatTabungan', [MobileTabunganController::class, 'getRiwayatTabungan']);
+    Route::post('/beratSampahPerHari', [MobileTabunganController::class, 'beratSampahPerHari']);
+    Route::post('/beratSampahPerBulan', [MobileTabunganController::class, 'beratSampahPerBulan']);
+    Route::post('/beratSampahPerTahun', [MobileTabunganController::class, 'beratSampahPerTahun']);
+
+
+     //KUNJUNGAN 
+     Route::post('/KunjunganDiajukan', [MobileKunjunganController::class, 'KunjunganDiajukan']);
+     Route::post('/KunjunganDitolak', [MobileKunjunganController::class, 'KunjunganDitolak']);
+     Route::post('/KunjunganDiterima', [MobileKunjunganController::class, 'KunjunganDiterima']);
+     Route::post('/tolakKunjungan', [MobileKunjunganController::class, 'tolakKunjungan']);
+     Route::post('/terimaKunjungan', [MobileKunjunganController::class, 'terimaKunjungan']);
+     Route::post('/getRiwayatKunjungan', [MobileKunjunganController::class, 'getRiwayatKunjungan']);
+    // Route::post('/uploadKegiatan/store', [ProductController::class, 'DaftarKunjungan']);
     // Route::put('/product/{id}', [ProductController::class, 'updateProduct']);
     // Route::get('/delproduct/{id}', [ProductController::class, 'destroyProduct']);
 });
