@@ -224,7 +224,7 @@ class MobileUserController extends Controller
 {
     try {
         // Ambil data pengguna dengan kriteria level_user 'user'
-        $users = User::where('level_user', 'user')->get(['nama_user', 'email_user', 'alamat_user']);
+        $users = User::where('level_user', 'user')->get(['id_user', 'nama_user', 'email_user', 'alamat_user']);
 
         // Buat respons JSON
         $response = ['status' => 'success', 'users' => $users];
@@ -237,6 +237,8 @@ class MobileUserController extends Controller
         return response()->json($response, 500);
     }
 }
+
+
 
 
 

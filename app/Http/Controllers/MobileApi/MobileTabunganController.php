@@ -232,7 +232,38 @@ public function getRiwayatTabungan(Request $request)
         }
     }
 
+    public function getTabunganByDate(Request $request)
+{
+    // Validasi input
+    $validator = Validator::make($request->all(), [
+        'tgl_tabungan' => 'required|date_format:Y-m-d',
+    ]);
 
+    // Jika input tidak valid, kembalikan response dengan status 400
+    if ($validator->fails()) {
+        return response()->json(['error' => $validator->errors()], 400);
+    }
+
+    // Ambil data dari input
+    $tanggal = $request->input('tgl_tabungan');
+
+    // Query untuk mengambil data tabungan berdasarkan tanggal
+    $tabungan = Tabungan::whereDate('tgl_tabungan', $tanggal)->get();
+
+    // Jika data ditemukan, tambahkan nama pengguna ke dalam respons
+    if ($tabungan->isNotEmpty()) {
+        foreach ($tabungan as $data) {
+            $namaUser = User::where('id_user', $data->id_user)->value('nama_user');
+            $data->nama_user = $namaUser;
+        }
+        return response()->json(['tgl_tabungan' => $tabungan], 200);
+    } else {
+        // Jika tidak ada data, kembalikan response dengan status 404
+        return response()->json(['message' => 'Tabungan not found'], 404);
+    }
+}
+
+    
 
 
 }

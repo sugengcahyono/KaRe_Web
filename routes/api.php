@@ -51,6 +51,8 @@ Route::group(['prefix' => '/apimobilekare'], function()
     Route::post('/updateUser', [MobileUserController::class, 'updateUser']);
     Route::post('/changePassword', [MobileUserController::class, 'changePassword']);
     Route::post('/deleteAccount', [MobileUserController::class, 'deleteAccount']);
+    Route::post('/deleteUser', [MobileUserController::class, 'deleteUser']);
+    
     
 
 
@@ -75,6 +77,8 @@ Route::group(['prefix' => '/apimobilekare'], function()
     Route::post('/beratSampahPerHari', [MobileTabunganController::class, 'beratSampahPerHari']);
     Route::post('/beratSampahPerBulan', [MobileTabunganController::class, 'beratSampahPerBulan']);
     Route::post('/beratSampahPerTahun', [MobileTabunganController::class, 'beratSampahPerTahun']);
+    Route::post('/getTabunganByDate', [MobileTabunganController::class, 'getTabunganByDate']);
+    
 
 
      //KUNJUNGAN 
